@@ -1,0 +1,54 @@
+title: WinCE and Function Pointer Addresses
+date: 2005-06-22
+
+One of the more strange bits of code that didn't work out of
+the box during my Windows CE project is this nugget from
+Mozilla NPAPI plugin handling code. Basically what it
+attempts to do is discover if the given window has already
+been subclassed by comparing the current WNDPROC to a
+locally defined function. If the equality matches, then we
+know that the window has been subclassed by us (unless
+someone else also subclassed this window).
+
+        static LRESULT CALLBACK PluginWndProc(HWND hWnd, UINT msg,
+        WPARAM wParam, LPARAM lParam)
+        {
+                //
+        }
+
+        WNDPROC currentWndProc = (WNDPROC)::GetWindowLong(hWnd, GWL_WNDPROC);
+        if (PluginWndProc == currentWndProc)
+
+Looks fine, doesn't it?
+
+Well, looking at this in the debugger - if you mouse over
+the two operands looks fine too. However, when you run the
+code, the wrong thing happens.
+
+Now if you look at the ASM you see this:
+
+    2865E274 ldr r0, [pc, #0x124]
+    2865E278 ldr r1, [sp, #8]
+    2865E27C cmp r0, r1
+
+Loading one of the address off of the PC. I think that might
+work, but I am not totally sure.. hmm.
+
+Now, looking at the registers after the two loads I see
+something really messed up (the actual addresses I don't
+have at the moment):
+
+     r0 0x00ABCDEF
+     r1 0x83ABCDEF
+
+What is going on here? R0 looks like a NEAR 24bit pointer. This shouldn't be!
+
+I have tried a few things including, changing the
+declaration of PluginWndProc, doing the compare in a
+separate DLL, and various forms of casting. Nothing has
+worked yet.
+
+Here is the actual [code][].
+
+
+[code]: http://lxr.mozilla.org/seamonkey/source/modules/plugin/base/src/nsPluginNativeWindowWin.cpp#413

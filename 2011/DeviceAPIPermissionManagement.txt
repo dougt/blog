@@ -1,0 +1,49 @@
+title: Device API permission management
+date: 2011-03-21
+
+Keeping users in control of what device access a web
+application has is very important. For example, when a web
+application wants access to your physical location, Firefox
+— and all other browsers — ask you if you would like to
+share your location.
+
+These notifications have worked up until now because access
+to these devices has been almost non-existent. That is
+changing. Today, we have offline-storage, geolocation,
+desktop notifications, and the upcoming camera api all
+asking the user “may I” separately. It has become quite
+jarring to see a web application cause separate permission
+requests prompts.
+
+Instead of separate permission requests for each API usage,
+I think what we want is a add a new DOM API that allows web
+applications to ask for a set of permissions up front. For
+example, if you web application needs offline storage and
+geolocation, you would be able to do something like:
+
+             navigator.permissions.requestPermissions("geolocation, offline-storage", callback);
+             function callback(result) {
+                      if (result["geolocation"].granted)
+                         // great, we can do geo stuff.
+                      }
+             }
+
+This would cause a browser UI to appear to the user
+requesting two device access capabilities, namely –
+geolocation and offline storage. The callback would receive
+the result of this prompt. Notice that the result is not
+just a “Yes-No” answer. This will allow browsers to offer
+choice on which devices a web application has access
+too. Assuming a permission request was granted, future calls
+to the device apis’s will succeed without any browser
+permission UI.
+
+If a web application wants to check, without causing any ui
+prompt, the web application can use a similar call:
+
+
+        navigator.permissions.checkPermissions("geolocation, offline-storage", callback);
+
+I think this will greatly simplify permission management and
+avoid web applications causing jarring “may i” prompts. I’d
+like to know what you think.

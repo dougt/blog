@@ -1,0 +1,35 @@
+title: Joey Like Things
+date: 2008-02-27
+
+So, last year I was working on a Mozilla Labs project named
+Joey. If you were interested in this sort thing, there are a
+couple Joey like services that you should check out.
+
+First is something called ShifD, and as you can tell by the
+spelling, it is very much web 2.0. :-) ShifD basically
+allows you to edit your content on their site, then they
+provide that content, in a easy-to-view format, on your
+phone. For example, suppose you want to remember a grocery
+list. Right now, you might email or SMS yourself. Using
+ShiftD, you simply go to the ShiftD site, login, and write
+yourself a note. Then, when you are at the store, you can
+browse to their site, and see this note. You can do similar
+things for links to webpages, as well as maps. The services
+is very simple and very clean looking. They provide a
+bookmarklet to allow easy upload of links. This is pretty
+cool for me since I skim lots of blogs and need something
+that allows me to mark a page as “remember to read this”.
+
+WebClip2Go, lacks the hip web 2.0 name, but makes up for it
+with what it does. One of the most compelling pieces of
+Mozilla Joey was the ability for us to process
+microsummaries on the service side, and be able to “send
+your phone” just the content you are interested. This is
+exactly what WebClip2Go does. Users can create and share
+clipping of their favorite sites. For example, consider the
+NYTimes. Suppose I only cared about the most emailed stories
+of the day. I would have to load this entire page, then
+scroll to the bottom:
+
+This is the WebClip for the New York Times “Most Emailed
+Article”:

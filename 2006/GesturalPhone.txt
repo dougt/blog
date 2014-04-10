@@ -1,0 +1,28 @@
+title: Gestural Phone Prototype
+date: 2006-01-27
+
+[Alec][] Saunders wrote a bit on what he saw at FTRD. As I
+understand the demo, it is written using a scriptable NPAPI
+plugin. It also is using Minimo 0.08. (it is not using
+java).
+
+It is great to see innovation like this happen. I think Open
+Source allows this to happen a bit quicker than if a closed
+source solution was used. No one really had to go out and
+sign some kind of agreement to license source code or
+anything silly like that. FTRD simply was able to plug in
+and modify the application to test out new idea. As it
+turned out, the scriptable NPAPI worked fine for their
+needs.
+
+There are other areas where there just isn't a good way to
+plugin without getting your hands dirty and modifying the
+guts of the source code. One example that comes to mind is
+DCI. FT has been involved in the mobile standards
+process. Brad Lassey, a senior research scientist at FTRD
+Boston told me, its [minimo] really opened up a bunch of
+cool projects for us.
+
+Great work guys!
+
+[Alec] = http://saunderslog.com/2006/01/26/a-gestural-pone

@@ -1,0 +1,95 @@
+title: UAProf, UA, and fragmentation
+date: 2006-04-04
+
+
+
+This article is all guess work, pieced together by user
+comments, and my imagination.
+
+The operator ?? offers a Flat Rate data plan for $5 a
+month. This is quite a bargain. Many people have been using
+it also for their laptops (probably connected to the network
+via their cell phone). To prevent this type of usage, ??
+requires certain HTTP headers be sent by the browser to
+their proxy.
+
+First they require that the user agent be:
+
+      Mozilla/2.0 (compatible; MSIE 3.02; Windows CE; 240x320
+
+Secondly, they require a UAProf be sent. This http header
+allows the server to figure out what kind of device is
+actually making the request.
+
+The header looks like:
+
+x-wap-profile: http://URL_TO_XML
+
+The url points to some XML describing what the device
+actually is.
+
+The intent here is that the operator wants to ensure that
+only its phones + ie use their proxy and ultimately their
+bit pipe. There is nothing terrible about this -- after all,
+these are choices that corporations can and do make. If i
+wanted to start a cell company and only wanted to support
+minimo + my DougTPhone(tm), I have nothing stopping me. It
+would be a bad choice, but still I am empowered to make that
+choice.
+
+The problem is they way they invoked the technology to
+support their choice. They could have done just about
+anything if they thought of this problem before they had
+phones deployed in the field. For example, they could have
+sent the IMEA number to the proxy via a header then compared
+it to a table (hand wave over the performance, privacy, and
+security of this idea). However, knowing about this problem
+probably wasn't the case. Their phones+browsers were already
+deployed and they needed to simply restrict the laptops from
+chewing up their bandwidth.
+
+PocketIE already sends out a UA string and UAProf header as
+I described above. So, the obvious solution is to ensure
+those two fields are checked by the proxy. I would imagine
+it would take a very short time to ensure that this check
+was correctly made on all of the proxies.
+
+Everything is roses now. The laptops now are blocked from
+using this proxy for their data connections and all is good.
+
+Well, no people that were using this service are now pissed
+off. Using their laptops to connect had worked and now it
+doesn't. Now, if your are using your laptop over a GSM
+connections, you are probably a geek and geeks tend to be
+smart. :-) So, someone from this pool of users realize that
+their browser on their phone still can use the data
+connection. Now, people started thinking about what could be
+the difference and within a few minutes, someone figures out
+the change. Next, within a few seconds, someone has a patch
+that will make their Firefox browser lie about what headers
+it sends.
+
+This is great for the users -- they can continue using a
+cheap data connection anywhere they want. For the operator,
+it is not as bad as before where you had anyone with a
+laptop using their connection  now it is only the people
+that do a Yahoo! Search for the right key search terms,
+follow some shady instructions, including hacking their
+Windows Registry, etc.
+
+What is truly troubling is the fragmentation of what both
+the UA string and the UAProf are suppose to do which is to
+identify what kinda of thing is making a connection to
+the server. Now you will have Opera's, Minimo's, etc,
+running around claiming that they are someone that they are
+not. Classic UA string problem extended into what the UAProf
+was suppose to clear up.
+
+The operator did nothing completely stupid or wrongheaded. I
+would have probably suggested that they keep the proxies
+open or bump the price.
+
+Moral of the story: When users figure out that they can
+toggle this nob or move this lever to get something a bit
+better then they had before, they will do just that.
+

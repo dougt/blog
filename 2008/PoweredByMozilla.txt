@@ -1,0 +1,53 @@
+title: Powered By Mozilla
+date: 2008-04-18
+
+John Slater put together a logo called "Powered by
+Mozilla". The idea here is to show your users that the same
+rendering widget that is used in the Mozilla products
+Firefox, and Thunderbird is also used in your
+product. Check out this [post][].
+
+There are bunch of questions about around this effort and
+getting feedback is crucial to making the successful. Here
+some the questions at come to my mind:
+
+Administration and review. How does a software developer get
+this icon. What does the actual process look like? I would
+hope that this is not very complicated in any way and it
+also has to respect the nature of many closed source
+commercial vendors that cannot discuss anything about their
+product before it is released without a nondisclosure
+agreement. I would love it if if you could just go to a
+webpage type in a little bit of information such as who the
+person or company that is this being granted the use of the
+logo, agree that it can be revoked, press a button, and then
+be able to directly download the logos. I'm really hoping
+that an application review by human is not required. Is a
+require a review required in order to protect such a
+trademark?
+
+In the post there is a mention of lineage. I guess it
+relates to how much source code was used from Mozilla in
+making this embedded application. For example, if I just
+used NSPR, could I use this logo? We need to carve out what
+pieces of the Mozilla stack or required to ship as part of
+"Powered By Mozilla". I would argue that you must use most
+of the application stack you couldn't just use the
+JavaScript library and use this logo in your app.
+
+Furthermore, how fragmented can this embedded application
+be? Suppose I hated SVG and I thought the web was better off
+without it. I rolled my own browser and used the entire
+Mozilla stack, but I disabled as SVG. Would that qualify for
+this program? I would hope not. We don't need a fragmented
+web.
+
+It shouldn't be this program's business to verify, review,
+or think about quality issues in the applications that use
+the logo. Yes we all want better software, I'm just not sure
+that this program can or should be used as a stick to get
+better software. It's way too subjective, you risk the good
+ole boy system, and no one has time to QA a stream of
+products that may be applying to this program.
+
+[post]: http://blog.robotfromthefuture.com/powered-by-mozilla

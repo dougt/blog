@@ -1,0 +1,76 @@
+title: Minimo, FTRD, and Demo's
+date: 2005-10-13
+
+
+
+It is clear that people want to ask of their phones/devices
+three very simple questions:
+
+where am I?
+where is someone?
+where is something?
+
+The people want the answer without much typing or
+clicking. And they want the answer with haste, without
+clutter, and without having to dig through ads or other
+unneeded content.
+
+I predict this is will happen soon. Devices are getting
+cheaper, faster, more powerful. Wireless is getting faster,
+cheaper, and more available. Users are demanding more out of
+their phones and pda.
+
+I have been working with France Telecom Research and
+Development (FTRD) out of Boston in the last few month some
+of these problems. More specifically, I have continued my
+work on a small standards based ajax-capable browser based
+on Mozilla. This is basically what I have been calling
+Minimo for some time now. [Brad][] Lassey and his team at FTRD
+has a compelling idea in which mobile widgets based on
+standards can help answer some of these questions. Below are
+a few of their examples.
+
+For example, people need to check on shipping
+progress. Right now, you load whatever shipping companies
+home page, click on some kind of tracking button, enter your
+tracking ID and presto! our shipping information will be
+presented. Of course, we all can see ways to optimized this
+process. When you need to know when a UPS or FedEx package
+is going to be delivered, you should just load a tracking
+widget which allows you to directly enter a tracking ID for
+various shippers - thus allowing you to quickly get the
+information without too many cumbersome steps and its
+presentation allows you to get exactly the data you are
+interested in and nothing more.
+
+Here is this very cool demo created by FTRD using Minimo
+being presented to the press:
+
+http://networks.silicon.com/mobile/0,39024665,39152969-6,00.htm
+
+This next demo it totally cool. Matt Womer did an
+outstanding job; It touches on the whole Location Based
+Services aspect of mobile computing. This widget example
+answers the question, "where is someone". I think of it as
+Harry Potter's Marauder's Map. Imagine you are wondering
+where your friend is. Instead of calling them, there could
+be some kind of opt-in location service whereby, friends and
+families can see exactly where you are. This demo simulates
+a person driving down the street. This person has a
+gps-enabled phone which is uploading location information to
+a server. Now, friends and families can connect to a web
+service which plots this location information on top of a
+google map. The data is simulated; the data collected is
+just constantly replayed.
+
+http://www.notsosubtle.com/demo/demo.html
+
+In case you haven't noticed, both of these demos work great
+in Minimo. There are some other demo's but I will save those
+for later.
+
+Also in the news.. This article is somewhat misleading, but
+it is nice to see we are mentioned.
+http://www.computerworld.com/networkingtopics/networking/story/0,10801,105167,00.html?source=NLT_AM&nid=105167
+
+[Brad]: http://alumni.media.mit.edu/~lassey/

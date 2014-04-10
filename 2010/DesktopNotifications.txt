@@ -1,0 +1,71 @@
+title: Desktop Notifications
+date: 2010-06-21
+
+
+
+This is a feature that may come to a browser some day.Â  I
+am interesting in your thoughts:
+
+Desktop Notifications
+
+Desktop notifications allow a web page to notify the user
+using system level services, such as Growl, in a clean,
+safe, and easy to use manner.
+
+The code is very simple:
+
+    navigator.notification.notify("Another Desktop Notification",
+                                           "Check out my icon",
+                                           "http://dougt.org/me.jpg");
+
+and the result is something you’d expect from a
+notification. On the Mac, the notification may look like:
+
+![Image of a desktop notification](2010/DesktopNotification.jpg)
+
+
+You can get more sophisticated by adding a callback when the
+user clicks on the Desktop Notification.
+
+A user must grant each site permission before they can use
+Desktop Notifications.Â We will use the familiar
+notification bar (the text isn’t final.Â Also, these will
+end up looking quite different in future releases of
+Firefox.)
+
+Get involved:
+
+If you like or dislike this feature, please just leave a
+comment.
+
+If you like to follow the implementation details, you can
+follow bug 573588.
+
+You can try out the engineering builds.Â  There are bound to
+be a few bugz.Â  If you see anything funky, please let me
+know.
+
+If you are using the above engineering builds, you can try
+out Desktop Notifications.
+
+More details:
+
+I reviewed two draft specifications.Â  The first is the
+WebNotification specification and the other is the Google
+Gears NotificationAPI.Â  I found both of these APIs more
+complex than what was required.Â  Clearly both of these
+other APIs have use cases that are not address by my
+proposal.Â  But for basic notification from the browser, not
+much is required.
+
+Looking at what Growl and other system level notification
+services provide, you basically only need a title, a
+description, and an icon.Â  For fun, I added one callback if
+the user clicks on the notification while it is on screen.
+
+Next Steps
+
+You tell me.Â  Is this something you’d like to see in the
+browser?Â  Does the API work for your use cases?
+
+Let me know what you think!

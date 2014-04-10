@@ -1,0 +1,33 @@
+title: Device Orientation
+date: 2009-03-30
+
+I have a proposal for exposing device orientation in the
+browser. It is a pretty simple api that allows you to
+monitor motion changes from Javascript.
+
+For example:
+
+    navigator.orientation.watchOrientation(draw);
+    function draw(o) {
+             // o.x, o.y, o.z
+    }
+
+
+o in function draw is a vector in three dimensional space in
+meters / (seconds^2) units.
+
+This allows you to do some revolutionary stuff on the
+web. This is a simple test web page that moves a ball around
+a web page. I am just loading this web page directly with
+XUL Runner on Windows Mobile Professional 6.
+
+[Device Orientation on YouTube][]
+
+This only supports exists on HTC devices but i do expect
+other devices that have accelerometers to have
+implementations.
+
+I am tracking this feature in bug 485943. Please check it
+out and let me know what you think.
+
+[Device Orientation on YouTube]: http://www.youtube.com/watch?v=WYGEZreI_LU

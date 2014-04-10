@@ -1,0 +1,18 @@
+title: Geolocation V2 removed from Gecko
+date: 2013-03-08
+
+
+
+I implemented the W3C Geolocation API V2 specification ahead
+of the other browsers. In this API, web sites can not only
+request a latitude and longitude but also request a physical
+mailing address. It does this by ‘geocoding’ the latitude
+and longitude pair using a third party service.  These
+services typically cost a lot.  On the desktop, I disabled
+this feature after a few months of it live.  After the
+removal, I did not receive any emails that things ‘broke’.
+Hence, I believe there is little demand for V2.
+
+I am going to remove support for V2 in Mozilla.  In the
+future, if there is a demand, I think the right approach is
+to expose geocoding to the web as a separate API.  Stay Tuned.

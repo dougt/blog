@@ -1,0 +1,39 @@
+title: Support geolocation in the browser
+date: 2006-08-08
+
+
+
+A friend of mine wrote me asking how he could help with
+geolocation in the browser. I tried to outline what I have
+been thinking about and thought I should share.
+
+We need to figure out what how we want to support
+geolocation in the browser. I have prototyped a gps service
+for Minimo and in doing so found the follow issues that we,
+as a community, need to address:
+
+1) privacy. how do we expose geolocation safely while making
+sure that the user is always in control? how do I tell
+Fandango.com one location accuracy (like a zip-code level
+notion of where I am at), but a cool GPS Service my exact
+location.
+
+2) how do we want to expose this to script? What is the
+right unit to describe location , what is the right form for
+javascript (object verse class), should this fall under some
+capabilities (cc/pp) framework? We should work with IE,
+Opera, and Webkit to support some standard way of expressing
+this new functionality.
+
+3) how do we allow location plugins to drop into FF. For
+example, we can support most GPSs via NMEA, but what about
+players like SkyhookWireless or folks that are using other
+means to discover location. What if these systems do not
+really know about lat/long, but rather - named places -
+(eg. your office, your kitchen, your kids school, in cube
+#42). Moreover, we need to have a consistent way of figuring
+out which is the best plugin to use when reflecting this
+information.
+
+I am sure there are other issues. If you are intersted in
+helping, send me mail. if you have ideas, comment away.

@@ -1,0 +1,81 @@
+title: A Short History of Mozilla on Windows Mobile
+date: 2009-02-10
+
+
+I thought it might be nice to reflect on my involvement in
+porting the Mozilla to Windows Mobile.
+
+In 2004 we had a project called Minimo — it was meant as a
+lighter weight build-time configuration of Mozilla for
+GTK. To showcase the build options, we had an application
+called TestGtkEmbed that developers could use to test
+against benchmarks, etc. As the name implies, it was just a
+testing application — it didn’t have browser features like
+bookmarks, session history, preference management, etc.
+
+At the end of 2004, I was hired by the Mozilla Foundation
+working for Chris Hofmann, who was the director of
+engineering. I started on porting this set of build options
+to Windows Mobile. At this point, there was no real desire
+to build an application — I was happy to just continue
+building a browser engine that could be part of another
+application.
+
+I really had no desire to do Windows Mobile
+development. However, at the time, it was really the only
+devices available that people could by off the street and
+run very large applications on (think: a modern web
+browser). The idea was that you could do direct-to-consumer
+development.
+
+We found that there was some work done by Garrett Blythe (i
+don’t have a better link, sorry) at Netscape in 2002 which
+we could leverage — there was a partial patch to NSPR for
+windows mobile. Garrett was responsible for an effort to
+port Netscape to Windows CE. His basic approach to porting
+from Win32 -> WinCE is is what I continued using (and we
+still use most of it today).
+
+At the beginning of 2005, Brad Lassey started helping and
+around March 2005 we had much of the platform ported
+over. Below is the picture of the first time mozilla
+rendered google windows mobile phone:
+
+If you want to see other pictures, check out rebron’s posts
+from way back when.
+
+At some point, we needed to branch away from using WinEmbed
+(basically the same thing as TestGtkEmbed i mentioned above,
+but for windows) and decided it was a good idea to build a
+UI for Minimo on Windows Mobile that end users could
+use. Looking at something we might be able to share between
+the linux/gtk version of Minimo and Window Mobile, we
+decided to write the UI in XUL. The size/space measurement
+for using XUL were very small compared to the flexibility
+you got (we were thinking extensions).
+
+Working from Brazil, Marcio Galli was basically responsible
+for the front end. We experimented with a bunch of things
+like social bookmarking, geolocation, device API, and
+widgets. We learned alot, and some of this ended up being
+the basis for a draft spec.
+
+In April 2006, I stopped working on Minimo full time and
+started other mobile work for Mozilla. The Minimo project
+continued. I tried to work fix the occasional bug, but
+development basically ended.
+
+At the end of 2007, I blogged about the end of Minimo (the
+windows mobile mozilla browser) and a new effort called
+Fennec. Our team now is much larger than the original
+effort; we have people in QA, Press, IT, UX, Marketing all
+thinking about Mobile.
+
+Now, we have our first public milestone release. A
+completely new font backend, cairo support, extension
+support, and basically everything that Firefox has.
+
+Today is the rebirth of this browser: Better, stronger,
+faster. We have a way to go before we declare a “1.0″
+release, but hope you come with us and participate in open
+source, mozilla, and Fennec – our mobile browser.

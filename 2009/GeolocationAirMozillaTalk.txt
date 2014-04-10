@@ -1,0 +1,42 @@
+title: My AirMozilla Geo Talk
+date: 2009-03-05
+
+
+hey, i gave a talk about geolocation on air.mozilla. please
+check it out. Youâ€™ll need a Firefox 3.1 nightly or beta
+releases watch the video.
+
+In the video, I mentioned the strawman position statement
+and here it is. I am interested in hearing what you think!
+
+Privacy considerations for implementers of the Geolocation
+API:
+
+User Agents must not send geolocation data to websites
+without expressed permission of the user. Browsers will
+acquire permission through a user interface which will
+include the document origin URI. All permissions should be
+revocable, and applications should respect revoked
+permissions.
+
+Some User Agents will have prearranged trust relationship
+that do not require such user interfaces. For example,
+Firefox will present a user interface the when example.com
+performs a geolocation request. However, a voip telephone
+may not present any user interface when using a geolocation
+to perform an E911 function.
+
+Privacy considerations for recipients of location
+information:
+
+The two primary concerns regarding recipients of geolocation
+data are retention and retransmission. Recipient of location
+information should retain location information only as long
+as required. Users must be allowed to update and delete
+location information that they have posted. Recipient of
+location information should not retransmit the location
+information without the user’s consent. Care should be taken
+when retransmitting and use of HTTPS is
+encouraged. Furthermore, a clear and accessible privacy
+policy should be made available to all users that details
+the usage of location data.

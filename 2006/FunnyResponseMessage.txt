@@ -1,0 +1,19 @@
+title: Email response error messages
+date: 2006-04-04
+
+I hate spam as much as anyone. What I hate more are the spam
+gateways that prevent people from connecting without reading
+some verbose server error messages, or requiring that you
+send mail to allow@domain. Here is a more specific error
+message I got back from a server. It was in response to a
+followup on a newsgroup posting:
+
+         The following addresses had permanent fatal errors
+
+         (reason: 550 5.7.0 Fuck off)
+
+         Transcript of session follows
+         while talking to ..:
+         >>> >>> DATA
+         <<< 550 5.7.0 Fuck off
+         554 5.0.0 Service unavailable

@@ -1,0 +1,38 @@
+title: More on the Mobile Companion
+date: 2007-01-23
+
+At the last Firefox Submit, we discussed this idea called
+the [Mobile Companion][] in which we could address some of the
+immediate needs of Firefox uses. Some of the use cases
+discussed could be summarized as “being able to use the
+mobile phone as an endpoint in Firefox’s data
+brokering”. Mitchell, [Read/Write Web][], and Alex spoke a bit
+about this idea that Firefox could be used as the thing that
+can manage all of your “metadata” in the browser.
+
+200701221027
+
+The targeted phone is much lower end than what Minimo
+required. We are thinking just about any phone that can run
+Java should be able to use what we build.
+Some use cases include
+1) You browser upon calendar data on the web, you should be
+able to get that data to your phone. Either to some built in
+calendar on the phone, or send an SMS to the phone as a
+reminder, etc.
+2) You are on a map site and you want to get the directions
+to your phone, it should be as easy as sending an SMS (see
+sendtophone addon by google).
+3) You have selected to bookmark a microsummary
+(LiveTitles), you should have an option to get the LiveTitle
+updates to your phone even when Firefox is closed.
+4) You should be able to browse your images in Firefox, and
+have the ability to push (and possibility convert to the
+correct format) an image to your phone.
+If you have ideas about other use cases, feel free to update
+the [wiki][].
+
+
+[Mobile Companion]: http://wiki.mozilla.org/FirefoxSummit/2006/ProposedSessions/FirefoxMobileCompanion
+[Read/Write Web]: www.readwriteweb.com/archives/mozilla_does_microformats_firefox3.php
+[wiki]: https://wiki.mozilla.org/MobileCompanion

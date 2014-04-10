@@ -1,0 +1,27 @@
+title: MouseEvent pressure property
+date: 2008-05-05
+
+
+
+I added a new attribute on the MouseEvent to expose the
+amount of pressure is being applied to a touch screen.
+
+The video shows me pressing a pen then my finger on the
+touch screen.Â  The value on screen is a number between 0
+and 1; zero indicating no pressure and one indicating alot
+of pressure.Â  Sorry about the quality.
+
+[video][]
+
+ou could imagine building a web painting application that
+varies the thickness of a line based on how hard you press,
+or the Fennec browser app could vary the speed of the scroll
+based on how hard the user presses on the scroll area.
+
+Before this makes it into the project, there are a bunch of
+unanswered questions in the bug.Â  Mostly questions relate
+to how we expose this property in the DOM, and how to gather
+this pressure information from the platforms.
+
+[video]: http://www.youtube.com/watch?v=m_nwqj0rlb4
+[bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=428988

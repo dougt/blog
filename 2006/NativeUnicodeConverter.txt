@@ -1,0 +1,17 @@
+title: Native Unicode Converter
+date: 2006-04-03
+
+
+I wrote a native Unicode converter for windows ce which also
+works on Windows 32. This allows us to remove alot of
+code+data from firefox (on ARM i saved .67MB). This might be
+something we could enable on the trunk since we have dropped
+Windows 98 support. If you have time, i would love for you
+to evaluate it. To create a build, just add this like to
+your mozconfig:
+
+     ac_add_options --enable-native-uconv
+
+The code for this converter lives here:
+
+http://lxr.mozilla.org/mozilla/source/intl/uconv/native/nsWinCEUConvService.cpp

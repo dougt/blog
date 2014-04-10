@@ -1,0 +1,99 @@
+title: Exposing Geo-Location in Minimo
+date: 2006-07-14
+
+
+Exposing Geo-Location safely in the browser is a compelling
+idea. If a web site knows where you are physically located
+on earth it may be able to deliver more interesting content.
+This also raises HUGE privacy concerns which we need to nail
+down.
+
+For example, suppose you were at the airport and you used
+your web browser on your phone and hit aa.com or some other
+airline's home page. If aa.com has your location, if it
+knew that you were at one of its terminals, the website
+would be enabled to show you specific information about
+arrival and departures from the airport you are in without
+you actually having to do anything.
+
+Another example, what if fandango.com saw that you were in
+the 95051 zip code and immediatly offered movies from that
+area. They already must ask for your zip code, and if you
+choose to give it to them, you have to press at least 6
+buttons. If the phone knew, you would have at most one (a
+confirmation to send your location to fandango).
+
+Recently, I enabled GPS support in Minimo. If you have a
+WM5 device and a GPS, you can begin to explore this new
+functionality. Don't worry, even if you have this WM5 and a
+GPS, you have to manually enable this support.
+
+To get started, you need to enable your GPS via the GPS
+control panel in WM5. We have some ideas of what to do for
+linux and for windows ce devices that do not have this
+control panel (email me if interested).
+
+To configure this, Keni Barwick has a great overview of what
+you have to do. Even if you do not see a GPS Control Panel,
+Keni will show you the way. (http://blogs.conchango.com/kenibarwick/archive/2006/03/19/3119.aspx).
+
+Once this your GPS is configured via this setup, Minimo
+still will not be able to use it. What you will have to do
+is enable a preference in minimo. To do this, you need to
+add:
+
+        pref("gps.enabled", true);
+
+Once this is set, you are geo-location enabled. :-)
+
+Any time any site asks you for this information, you will be
+presented with a dialog asking you to confirm that this is
+what you want to do (similar to the checks that we have in
+place when a site requests to install software on your
+machine).
+
+The only working demo of this functionality is here:
+
+    http://www.meer.net/~dougt/wai.html
+
+It basically puts up a google map centered exactly where
+your GPS says you are, then puts a point on the map on that
+location. You can walk around and see this little point
+move. This example needs alot of help to become useful
+your changes are welcome. ;-) I am not doing any real
+logging on the site, but of course realize that you are
+going to be sending meer.net your exact location.
+
+The code is pretty simply:
+
+    var gps = new window.GPSService;
+
+    var lon = gps.longitude;
+    var lat = gps.latitude;
+    var alt = gps.altitude;
+
+This is subject to change as I need further input from
+people that know more about geo location stuff and probably
+from some of the people interested in the window
+namespace. ;-)
+
+What does this all mean and for what purpose?
+
+This GPS stuff is to showcase some of the really interesting
+things that you can do when you bring together, location
+data and a browser. It also is a call for help. I am going
+to need help on the following which you may be able to aide
+in:
+
+a) is this the right API?
+
+b) is the unit (lat/log; meters for alt) the right thing?
+how do we plugin in other data sources and continue to have
+similar units.
+
+c) is there a better privacy model? maybe tiered so that we
+have levels of like only give out the general area
+(e.g. zip code).
+
+d) where do we propose something like this so that we do not
+have browser fragmentation.

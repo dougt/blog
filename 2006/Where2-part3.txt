@@ -1,0 +1,106 @@
+title: Where 2.0, part 3
+date: 2006-06-15
+
+Best 5 Geo Hacks ever was a nice session. It was a summary
+of five greatest events in history for geography. Sorta
+reminded me of the history channel, just live and a bit more
+animated. Here are my brief notes:
+
+1) Measurement of the earth by Eratosthenes within 15%
+accuracy. (Earth being round at the time is a myth.)
+The idea here is that it was said that somewhere on the
+planet there was a place that the sun light hits the
+bottom of a deep well on a specific day and time. This
+means that this spot must mean the sun is directly above.
+If you know this, and can measure the angle of this
+sunlight some distance away, you can calculate the
+distance of of the arc. I am sure that wikipedia has
+details.
+
+2) Galleio saw the moons of Jupiter. These moons can be
+used to calculate the current time. Remember at the time
+there was no really good timepiece. Time is a required
+part of determining longitude back then.
+
+3) Harry Beck drew the underground map in England. It was
+revolutionary as it showed exactly what you need to know
+when you are looking for train stations. Beck’s
+background was electronics. If you are ever on a train
+or bus, look at the posted map… it looks nothing like
+the typical topography maps — it looks more like a
+circuit diagram. You can thank Beck for that.. The
+point being it is as important to decide what you are
+going to leave out of a design as what you are going to
+include.
+
+4) VOR Systems. How do you map things that are not
+physical.
+
+5) Orientation by the moving star positions. Virtual
+compass in the sky. The ancient sailors were made of
+tough stuff. The were able to navigate the seas by
+seeing slight variations of the position of stars in the
+sky.
+
+Gary Lang from Autodesk gave a talk on Open Source. The
+theme was how does software migrate to open source?
+According to the speaker, it has to do with “Core and
+context” a concept deal with by the book “Dealing with
+Darwin” by Geoffrey A. Moore.
+
+Standards facilitate and drive migration to open source… it
+because a community.
+
+Suggested reading “Mirror Worlds” by Gelernter. This
+explains a bit about what we are seeing with geospatial
+life.
+
+Why Autodesk went to Open source:
+Faster development turn around
+Users wanted it
+It makes business sense for MapGuide, Map, topobase
+
+There were a couple sessions on Open Source mapping
+software. These are mostly map engineering tools. It
+sounds like you can reproduce everything that google has
+done (assuming that you owe that datasets) with open source
+tools. There was even a call to Google to make Google Earth
+itself open source.
+
+Jim Greiner, the GM of MapQuest, gave a brief history of the
+company. This focus was on how to make location
+omnipresent.
+
+The three truths when dealing with consumer needs and mass
+market place are:
+
+1) Focus on whatz truely useful to the consumer
+2) Make it economically viability
+3) Aim for the mass market consumer usge
+
+He showed a DVD of a actually users. It was cheesy video of
+people using MapQuest then driving to their location –
+talking about how great mapquest is the whole time. I
+wonder if they were acters or not.
+
+Do you remember that MapQuest had aerial imagery in 2001?
+It pulled it down because of low interst, no real way to
+fund the business via advertising, and/or crappy usablity.
+
+Mapquest showed some statics on usage. Mapquest is used
+more for driving directions more than Yahoo and Google
+combined.
+
+Don Cooke of Tele Atlas discussed how TomTom’s during the
+Katrina disaster. Primarily used for a GeoCoder, and points
+of interest. He also showed some seriously crazy GPS hacks.
+For example, he tied a GPS to his cat to see where it would
+go, then plotted that on Google Maps. Another, used a GPS
+to draw “Fun with GPS” in a field similar to what you see
+with crop circles.
+
+Overall the show was very intersted. however this
+conference did not present any material or papers on
+Location + Web. Maybe next year I will present a paper on
+the work I was doing on extending the DOM to support
+geoposition. More on this soon, i hope. :-) 

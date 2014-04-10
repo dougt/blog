@@ -1,0 +1,32 @@
+title: Joey retired today
+date: 2008-08-14
+
+Back in January, I spoke a bit about Project Joey. This
+morning wil clouser told me that we are running out of space
+on a shared nfs that holds logs for some other systems.
+
+The Joey project uses some space on this mount to store
+users uploads (10gb for users uploads, and about 3 gb for
+our cache). After thinking about the amount of time I put
+into Joey over the last few month (goose egg), and after
+discovering that Joey hasn't actually processing uploads
+since July, I decided to retire Joey.
+
+This isn't a sad thing. We got lots of people starting to
+think about the web on mobile in different ways. Joey was a
+catalyst to starting Weave. Commercial implementations of
+similar functions, such as beta of ZipClip, exist. And, from
+the beginning, the source has been open, and we have
+provided help for anyone to setup their own server.
+
+The focus now is Fennec. Fennec will have Weave and addon
+support. You will be able to write extensions that work in
+Firefox and (without much modification) work in Fennec. This
+means that making things like Joey using the Weave back
+end will be very interesting. The Weave server can expose
+content to other browsers, allowing Weave to work
+everywhere. If you are interested in helping on Weave,
+please do send mail to Dan Mills. If you are interested in
+helping on Fennec, join #mobile on irc.mozilla.org.
+
+Thanks for participating!

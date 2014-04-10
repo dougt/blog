@@ -1,0 +1,13 @@
+title: Coolkey in Redhat FC6
+date: 2006-10-13
+
+Looks like the key/token management stuff I worked on at AOL
+that was acquired by RedHat is public. It looks like the
+license blocked was chopped off and replaced with a standard
+GNU General Public License and the class names have been
+renamed.
+
+Apparently this stuff is default in FC6. Congrats to
+Wan-Teh, Bob, Bob, and the rest of the team. ;-)
+
+http://directory.fedora.redhat.com/wiki/CoolKey

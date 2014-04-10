@@ -1,0 +1,15 @@
+title: What is a reflow
+date: 2008-05-24
+
+
+Reflow is the process by which the geometry of the layout
+engine’s formatting objects are computed.Â  Last week, I was
+searching around and stumbled on these really cool visuals
+of what a reflow looks like. If you’re a visual person,
+you will dig these: [a][], [b][], [c][]
+
+
+[a]: http://www.youtube.com/watch?v=nJtBUHyNBxs
+[b]: http://www.youtube.com/watch?v=ZTnIxIA5KGw
+[c]: http://www.youtube.com/watch?v=dndeRnzkJDU
+

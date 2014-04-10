@@ -1,0 +1,37 @@
+title: Device Proximity
+date: 2012-03-22
+
+Many devices have proximity sensors embedded in them.  To
+expose this to web content we should just use DOM Events
+similar to that of Device Motion and Device Orientation.  A
+developer simply has to register an event listener:
+
+
+    window.addEventListener("deviceproximity", callback, true);
+
+The callback’s parameters include:
+
+    value – the current distance to the proximity sensor in cm.
+    min – the minimum value that the sensor and report. Usually zero.
+    max – the maximum value that the sensor can report.
+
+
+    function callback(a) {
+             var d = document.getElementById("d");
+             d.innerHTML = "<p> Current Value " + a.value + "<p> Max = " + 
+             a.max +  "<p> Min = " + a.min
+    }
+
+Like Device Motion and Device Orientation, the sensor will
+be turned on when the first listener is added.  And, of
+course, the sensor will be turned off when the last event
+listener is removed.
+
+This work is being tracked in bugzilla bug 738131.  Sample
+[webpage][]
+
+I hope to get this in for Firefox 14 or 15, and of course,
+B2G.
+
+[webpage]: http://dl.dropbox.com/u/8727858/mozilla/proximity/pro.html
+

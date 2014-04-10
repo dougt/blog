@@ -1,0 +1,55 @@
+title: Fast Flash in Fennec
+date: 2009-11-29
+
+For the last few days, we have been making Flash fast in
+Fennec.
+
+Our situation in Fennec is that we have a hidden browser
+element that contains the flash object/embed element. When a
+paint needs to happen, we draw whatever the plugin wants to
+draw into a canvas or sent of canvas elements. These canvas
+elements are what the user sees on the screen — they are
+part of Fennec’s tile manager. Now these draws to the tile
+manager consistent of a 16bpp to 24bpp conversion (I am told
+that the flash is optimized for 16bpp), then a copy to a
+gfxXLibSurface, then a final blit to the screen. This final
+bit also contains a 24bpp->16bpp conversion because the
+screen is 16bpp. To make matters much worse, many plugins
+intersect multiple canvases in the tile manager which causes
+this drawing path to happen multiple times per video
+frame. The end result is that we were getting no more than
+4-5 fps.
+
+We took some incremental steps to improvement performance,
+but we were no where close to double digit fps.
+
+At this point, we decided to just draw directly to the
+screen avoiding the tile manager completely. This allowed us
+to render without any conversions and only one copy — the
+plugin could write directly to X11 shared memory.
+
+In making this decision, we would lose a bunch of
+information that Gecko provides such as where the plugin
+should be position relative to other elements, and how it
+should be clipped.Â  The solution we came up with was to let
+Fennec tell each of the object and embed elements where they
+should be drawn. Â The frame painting code would honor the
+position and clip that the front end set. Â In this way, we
+could have plugins do the right thing during pans and when
+content is below the Fennec sidebars/urlbar.
+
+You can check out how Fennec positions elements here:
+
+http://mxr.mozilla.org/mobile-browser/source/chrome/content/browser.js#2937
+
+The end result in this work is that we get over 25fps when
+Sorenson encoded videos.Â  Over the next weeks and months, I
+hope to see more video content honoring Fennec’s user agent
+and provide optimized content.Â  (YouTube and other sites do
+not recognized Fennec’s UA, yet).
+
+This fast path is only implemented on Maemo, but it can be
+implemented on any platform assuming the plugin has support
+to draw directly into a memory buffer.
+
+You also can check out the details in bug 528551.

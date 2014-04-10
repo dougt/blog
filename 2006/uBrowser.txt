@@ -1,0 +1,15 @@
+title: uBrowser
+date: 2006-02-08
+
+
+Some of the unsung heros of our community are those brave
+embedders that took the mozilla code and massaged it into
+their own applications. This isn't a trival task that you
+can throw just anyone at.
+
+A friend of mine, Callum Prentice and I worked together over
+the last few months to help embed Mozilla Technologies into
+SecondLife. He put together an awesome embedding example
+known as [uBrowser][] which shows some of the progress he has made.
+
+[uBrowser]: http://ubrowser.com/

@@ -1,0 +1,52 @@
+title: Mouse Pressure Support in Mozilla
+date: 2008-12-10
+
+
+A few months back, I prototyped a device feature that would
+allow the MouseEvent to also carry an attribute of how hard
+you were pushing down on the screen. This evening, Oleg
+Romashin, pushed an implementation into the mozilla-central.
+
+With this new addition, you can build a new class of
+interactions. For example, you could imagine a painting web
+application that varies the size of the pen’s stroke
+depending on how hard the user is pressing down on the
+screen. Or the web browser itself could scroll faster or
+slower depending on how hard you are pressing down.
+
+To use this feature, simply register to listen to mouse
+events how you normally would, and then check the value of
+the new attribute mozPressure.
+
+    target.addEventListener(“click”, listenerForClick, true);
+
+    function listenerForClick(event) {
+        if (event.mozPressure != undefined)
+           alert(event.mozPressure);
+        }
+    }
+
+The value is defined between 0 and 1. The harder you press,
+the closer the number gets to 1. You can also use this to
+determine if the user is using a stylus, or if the user is
+using their thumb. Oleg has pointed out that, at least on
+the Nokia N-series devices, different values are grouped in
+such a manner:
+
+    0.0 – light touch with stylus
+    0.1-0.2 – normal stylus touch
+    0.2-0.5 – normal finger press
+    0.5-0.75 – Fat thumb press
+    0.75 – 0.99 – palm press 
+
+This feature will most likely be in Mozilla Fennec, as well
+as future version of Firefox. It is a mozilla-only feature
+(notice the “moz” prefix on the attribute name), but i would
+think this would be something Mozilla would be interested in
+standardizing (maybe not this exact behavior, but something
+similar).
+
+Currently, it is only supported on Gtk, but I do not see any
+reason why this wouldn’t also be supported on other
+platforms that expose this functionality. We would love to
+have feedback on this new attribute.

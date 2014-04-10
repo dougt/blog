@@ -1,0 +1,33 @@
+title: Device Light Sensor
+date: 2012-03-26
+
+Similar to proximity, Many devices also have light sensors
+embedded in them. To expose this to web content we should
+just use DOM Events similar to that of Device Motion and
+Device Orientation. A developer simply has to register an
+event listener:
+
+      window.addEventListener("devicelight", callback, true);
+
+The callback’s parameters include:
+
+    value – the current ambient light level in SI lux units
+
+
+    function callback(a) {
+             var d = document.getElementById("d");
+             d.innerHTML = "<p> Current Value " + a.value
+    }
+
+Like Device Proximity, the sensor will be turned on when the
+first listener is added. And, of course, the sensor will be
+turned off when the last event listener is removed.
+
+This work is being tracked in this [bug][]. Sample
+[webpage][]
+
+I hope to get this in for Firefox 14 or 15, and of course,
+B2G.
+
+[webpage]: http://dl.dropbox.com/u/8727858/mozilla/light/light.html
+[bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=738465

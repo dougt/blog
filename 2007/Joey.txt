@@ -1,0 +1,91 @@
+title: Joey - Syndicate yourself
+date: 2007-03-16
+
+The simple task of taking text, images, video from your
+desktop to your phone is hard. There really is no “Copy and
+Paste to my phone”. There are some solutions for text — like
+SMS — for which Google has a neat little SMS addon. For
+images and small videos there is MMS which sorta of works,
+but the the interface on the phone is somewhat limiting —
+For example, a MMS from myself to myself, i really do not
+care about seeing the sender or recipient. That just takes
+up screen real estate.
+
+For both of these media types, you usually must view them n
+different apps or in different parts of the same app on your
+phone. So, if we had something that would be able to send
+some text then later send an image, either you would have to
+send both as MMS or you would have to see these messages in
+different places (one message in the SMS part of the
+messaging app, and one message in the MMS part of the
+messaging app). Not very consistent. And, probably some
+phones interleave these messages, but most don’t.
+The other thing about today model is that the pipe between
+the desktop and your phone is dumb – it just passes the data
+along. For the media that is currently passed, I suppose
+that is fine. Lets consider what we could do if the pipe was
+smarter.
+
+Suppose on your phone you wanted to know the Word of the
+Day. In Firefox 2, you could use something called Live
+Bookmarks to add a bookmark that has the name of this
+bookmark be the actual Word of the Day. So in my Firefox, I
+see something like this:
+
+today’s word happens to be “rococo“. Each and every day this
+word is different. Cool, huh?.
+
+
+What if you wanted this ability on your phone?
+
+
+In today’s world, this isn’t trivial — you would have to
+either:
+
+     (a) manually send yourself an SMS each and everyday
+from your browser
+     (b) use the phones browser to navigate to
+http://www.m-w.com/cgi-bin/mwwod.pl
+     (c) write some sort of java application that does this for you
+automatically.
+
+None of these options are ideal today (b) and some will
+never be (a, c). Furthermore, this Now lets generalize, what
+if you wanted the ability to be notified any time a specific
+piece of any webpage changes.
+
+Suppose that you are a news junkie and want to be notified
+anytime CNN.com changes its main story’s title. With a smart
+pipe, we don’t need to the actual text of the story’s title,
+but rather meta data about how to fetch and translate it
+similar to what Live Bookmarks does.
+
+So, from your phone you could see _your_ latest headlines.
+With something like this, you might be able to explicitly
+build the exact content that is of interest to you and you
+along. You might be able to indicate parts of all of
+webpages that you visit in the browser, and have that
+specific content up to date and in the appropriate format
+for your phone, without having to write a single line of
+code. Promising, huh?  Where is all of this going?
+
+I am working on a project call Joey — as in the kangaroo.
+The focus idea is that you will be able to take some of the
+data, media, meta data with you when you leave your desktop
+or laptop and have this data be easily accessible on your
+phone.
+
+This is an experimentation run under labs.mozilla.com with
+no real plans to productize it, but rather try something to
+see if it works, help our understanding of this space, and
+help our communities start thinking about mobile in
+different ways.
+
+If you would like to help, have ideas, or like to cheer us
+on, please take a look at our wiki:
+
+http://wiki.mozilla.org/Labs/Joey, or join us on irc:
+irc.mozilla.org #joey.
+
+We are planning a release of a highly alpha version of the
+Joey in April / May. Stay tune for more details!

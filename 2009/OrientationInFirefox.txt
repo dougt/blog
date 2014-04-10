@@ -1,0 +1,84 @@
+title: Orientation in Firefox and beyond
+date: 2009-08-23
+
+One of the coolest apps I saw when the iPhone came out was
+the wooden balance game Labyrinth.Â  You basically tilt your
+phone to move a ball around the screen, avoiding holes, and
+trying to get the ball to a goal.Â  It made use of a feature
+of many modern devices — accelerometers.
+
+Obviously clear that there should be a webapp for doing just
+that.Â  What was missing was a javascript API.
+
+In recent Mozilla trunk builds, I have added support for an
+orientation event.Â  This new event will allow you to build
+applications and listen for changes in orientation.Â  (note,
+the first platform to support such an event is any MacBook
+Pro.Â  Others will follow).
+
+Simple Call:
+
+To use this new event, you will add an event listener as you
+normally would:
+
+         window.addEventListener(“MozOrientation”, orientationChange, true);
+
+Your callback will be called, when there is a change in
+acceleration, passing the current orientation:
+
+              function orientationChange(o) {
+              }
+
+Simple Result:
+
+The passed object has 3 attributes – “x”, “y” and “z”.Â
+Each value is between -1 and 1 where zero is the “balance
+point”.Â  For example, suppose you device is a MacBook Pro
+and it is sitting on a desk that is perfectly level, you
+would expect to see:
+
+      x = 0
+      y = 0
+      z = 1
+
+x is the axis in the direction from the left side of the
+keyboard to the right side of the keyboard (basically the
+axis that is along the home row keys) is level.Â  If I lift
+up the left side of the keyboard, x will increase.Â  if I
+lift up the right side, x will decrease.
+
+y is the axis in the direction from the front of the laptop
+(where the mouse is) to the back of the laptop.Â  If I lift
+up the front of the laptop (the side closest to me), y will
+decrease.Â  If I left the back towards the front, y will
+increase.
+
+Got that?Â  Yeah, physics is pretty hard. :-(
+
+x and y can easily be visualized.Â  If you have a recent
+trunk build for the Mac, try loading this demo page:
+
+      http://people.mozilla.org/~dougt/ball.html
+
+z basically will tell you that the laptop is sitting right
+side up.Â  if z was -1, you would know that the laptop
+(probably closed) and is sitting on its screen.Â  Of course
+the value will change as you rotate the laptop / device in
+this direction.
+
+Right now, there is only support for the Macbook Pro.Â  It
+is pretty easy to add support for different OSs.Â  We have
+code for Samsung Windows Mobile devices, and for the HTC
+Windows Mobile devices.Â  We still need support for linux
+and for Windows.Â  If you are interested in adding support
+file a bug and start looking at
+
+http://mxr.mozilla.org/mozilla-central/source/widget/public/nsIAccelerometer.idl
+
+The API isn’t fixed and may change.Â  I do invite you to
+comment.Â  Keep in mind that we want a really simple and
+straight forward API to expose orientation events to web
+developers.Â  If your response has either “RDF” or “DCCI” in
+it, please reread the last sentence.Â  :-)
+
+Thanks again and hope you enjoy.

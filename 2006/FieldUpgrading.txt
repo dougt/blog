@@ -1,0 +1,47 @@
+title: Browsers on Devices - Field Upgrading Requirement.
+date: 2006-05-23
+
+
+
+All complex software has bugs. All complex software that
+accepts data from untrusted sources will have security
+holes. This is no big secret. After shipping Firefox 1.5, we
+have fixed about 17 vulnerabilities of varying degree. This
+is in a period of about six months or so. Other browsers,
+have had similar stories. Some worse, some better.
+
+On the desktop, when a patch to a security hole is released,
+your software usually notices it and alerts your to get the
+update. Windows Update now has an option to do this without
+your involvement a feature that always keeps you
+up-to-date. This is perfect for most users.
+
+On devices, there is no such story. I have been told that
+they way you upgrade a phone is that you buy a new
+one!. This would be nice for the device maker but terrible
+for the environment and any operator that subsidizes. Over
+the air (OTA) installation
+
+As browsing on a device becomes more popular, the field
+upgrade problem will become much more serious.
+
+Suppose that I just bough a new phone running Windows CE 5.0
+from a local operator. It comes with Pocket IE my default
+(which sounds a lot like what they did on the desktop
+remember the Netscape lawsuit. Does anyone know if Platform
+Builder allows you to build without PIE?). Now suppose that
+PocketIE has a critical security flaw. How does it get
+fixed?
+
+A couple of things have to come together. First, Microsoft
+has to fix the problem. Then the operator that I bought it
+from needs to put together a new ROM and someone notify me
+of this. Then I need to (usually) opt in to upgrade. This
+upgrade will remove all of my saved data on the device
+unless I backed up. What a mess! There has to be a better
+way to upgrade software on the device.
+
+Of course, this process hasn't been used very often as it
+probably hasn't been needed all that much. But as browsers
+hit devices, frequent user-friendly field updates are going
+to be a required feature of any serious device story.

@@ -1,0 +1,22 @@
+title: User Proxmity
+date: 2012-05-15
+
+We want to make it even easier to use device APIs.  Device
+Proximity has a sister spec called User Proximity that
+allows you to be notified when the user is “near” or “far”.
+So, instead of looking at sensor values and determining
+where the user is, you can simple register for a callback:
+
+      window.addEventListener("userproximity", callback, true);
+
+      function callback(a) {
+        // d=
+        if (a.near) 
+          d.innerHTML = "User is near"
+        else
+          d.innerHTML = "User is far"
+      }
+
+This work is being tracked in [Bug 751663][] and should be landed soon.
+
+[Bug 751663]: https://bugzilla.mozilla.org/show_bug.cgi?id=751663

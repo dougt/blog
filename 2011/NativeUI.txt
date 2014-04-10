@@ -1,0 +1,44 @@
+title: Fennec and Native Android UIs
+date: 2011-09-26
+
+Bringing up a User Interface (UI) as fast as possible is a
+very important goal and benchmark of any application. People
+don’t want to wait for their applications to load. Most
+applications on Android show a UI in under 300 milliseconds
+(ms). Fennec doesn’t hit that goal and is a major concern
+for us.
+
+The problem is that Gecko (our rendering engine) isn’t
+loaded when Fennec starts. We need to load Gecko into
+memory, start Gecko, then wait while it renders our UI from
+XUL. This is a lot of waiting around for us to show a
+relatively simple UI.
+
+At the Mozilla AllHands, Andreas Gal, Chris Jones, and
+Patrick Walton built a simple browser using a Android native
+front end instead of XUL. They showed a simple native UI
+around Gecko could be started in under 300 milliseconds. The
+idea is that the user immediately sees a familiar browser UI
+and while they are typing a uri or interacting with the UI,
+we load Gecko in the background. Their demo, although not
+complete, was dramatic and did not show any startup
+problems.
+
+Using a native UI does imply certain things. Clearly
+add-ons, specifically XUL overlays, will not work
+as-is. Mozilla’s Embedding API has been kinda-sorta
+deprecated and we may need to use those APIs to make a
+better app. There may be other issues that come up.
+
+To figure out these issues, we are starting a team to build
+out a more full featured demo. The work can be followed on
+github (git@github.com:snorp/mozilla-central.git branch
+faster). If you are interested, please drop me an email, or
+send me a pull request.
+
+Lastly, and most importantly, we will continue the existing
+XUL-based Fennec project and future Firefox on Mobile will
+still be based on the XUL front-end. The team will continue
+focusing on startup performance, memory usage, bugs fixes,
+and features. The Native Android UI project is an
+investigation at this point.

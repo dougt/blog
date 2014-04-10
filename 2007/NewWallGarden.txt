@@ -1,0 +1,45 @@
+title: The new "walled garden"
+date: 2007-01-17
+
+
+
+200701120020
+The new walled garden is not the content you can view on
+your phone, but rather the applications that you can install
+on your phone. For many years, getting to content on a phone
+is hard. As we have seen with the super high end phones,
+this isn’t a problem. The Nokia S60 series, the IPhone, and
+Windows Mobile devices all have little problem accessing and
+displaying the internet at large. On these phones, you
+aren’t going to be stuck at a wap portal wondering how to
+get to the content that you normally can at a desktop pc,
+but rather you are going to be able to access the exact same
+content, every time. Moving down to lower end phones, some
+of the default webpages that you see in the installed
+microbrowser are search pages. For example, many TMobile
+phones default to a google start page which transcodes the
+content into something that the microbrowser can use. Access
+to the open internet via a transcoding layer — very cool
+stuff. The consumer is not restricted to specific pages that
+the operator defined.
+
+This is a quote from Jobs in the NYTimes:
+&#8220;We define everything that is on the phone,&#8221; he
+said. &#8220;You don&#8217;t want your phone to be like a
+PC. The last thing you want is to have loaded three apps on
+your phone and then you go to make a call and it
+doesn&#8217;t work anymore. These are more like iPods than
+they are like computers.&#8221;
+
+He is right, we do not want it to act like a PC. We don’t
+want to be treated like we are 3 years old. We want a
+marketplace where people can innovation. We want choice.
+This is a consistent problem that I have found across most
+of the phones available. If you want to write a really neat
+piece of software, you find yourself having to deal with
+“locked” devices. It would be interesting if an Operator
+opened the doors and was much more permissive. For example,
+selling open phones and encouraging the mobile community to
+target their branded phones. You might be able to start a
+huge buzz of interesting apps that only work on XYZ phones.
+

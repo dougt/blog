@@ -1,0 +1,84 @@
+title: Where 2.0, part 2
+date: 2006-06-14
+
+check out the zopto addressing system.
+
+      /ca/santa+clara/san+jose/market+street/170
+      /ca/san+francisco/san+francisco/-coit+tower/-the-stairs
+
+Nothing new – this is the way we think when we think about a
+location. Far more easier this way when compared to a
+lat/long. I wonder if this is better for browser/server
+communication? For example, if we exposed location
+information to websites. By the way, this system is simply
+the “hierarchy” attribute given by other mapping APIs.
+
+see their business at: preview.zopto.com
+
+Thinks to look at very soon:
+
+* Labs.Metacarta.com
+* OpenLayers.org
+* Gutenkarte.org
+
+Shoutpod from imity.com is a neat little application. They
+keep track of the BT radio names. These radio name are
+associated with a person. You are able to keep track of how
+often you see these people. You can IM these BT names
+(assuming you are near them), share calendars, share email
+addresses. This is a cleaner way of business card sharing.
+I think I use too many phones to make this work for me.
+What about when I lose my phone — do I lose my friends too?
+
+In case you didn’t know (i didn’t), xAL is the international
+format for exchanging Lat/Long.
+
+Google now has a geocoding API. They are also launching an
+enterprise map support. (as lars putting people wanted to
+pay for the google API, and now they are letting them)
+
+gsmloc.org is doing something that I have seen done in
+Europe — people (geeks) drive around with a GPS and a
+phone. They have some application running on the phone that
+gets the cell tower id that the phone is connected to. This
+cell tower id and the current lat/long from the GPS is then
+uploaded to some server. When you get lots of people doing
+this (or a few people given a long time), you can begin to
+ask the questions “What is my lat/long for the cell tower
+that my phone sees”. The accuracy must be pretty rough. I
+am pretty sure that the operators are doing more than this
+for their 911 requirement. For some reason, i also have
+this url written down in my notes:
+crschmidt.net/service/map. Probably should check this out
+too.
+
+There was a demo for gumspots.com. I have not idea if this
+is a serious thing or not. The presention was “silly” — i
+really didn’t get if they were trying to joke with us or
+not. I should have had some coffee after lunch.
+
+Pixie Hunt is a outdoor adventure game buy a few microsoft
+employees. If you ever played “the go game”
+(http://www.thegogame.com/), this pixie hunt is a direct rip
+off done a bit more on the high end in terms of materials
+used. They use flickr for the image backend, use GPSs to
+track all the users, you can see all of the users that you
+are playing against as well as seeing their uploaded
+images. Better game because of better tech? No.
+
+Lauren Gelman of Stanford spoke about privacy. Nothing new
+here really. The only big idea that I took away was that
+“user expectation” of privacy is more important than just
+about anything else. If you fall short of meeting that
+expectation, you are failing to protect the enduser. I am
+not sure how EULA fit into this picture though.
+
+The stuff that Linden is doing with SecondLife and the
+Google is doing with defining models in Google Earth is
+scary. It might be the case that someone figures out a way
+to use a google-like earth and walk (as a avatar) around –
+maybe not so much to interact with other people, but maybe a
+way to better figure out where something is. If I could get
+a “feel” for exactly how to get somewhere buy virutally
+walking (or flying) there, I probably would get lost alot
+less.

@@ -1,0 +1,24 @@
+title: Minimo Road Ahead
+date: 2006-12-18
+
+As you might have noticed, I have not been spending alot of
+time on Minimo recently, but instead I have been doing alot
+of thinking about Minimo's potential and the many issues
+that must be overcome (both on the business side as well as
+on the technical side). The summary is that there are lots
+of browser in the space, the market is tightly control by
+cellular operators, and the end users aren't using the
+browser. This will change, but not for a few years.
+
+At the Firefox Summit, we had a brainstorming session that
+exposed some ideas that would help improve the lives of
+Firefox users that have mobile phones without having to
+build a full browser for the mobile handset. Things that we
+could do in a few months, rather than many years. Over the
+next few months, I will continue flushing out some of these
+ideas.
+
+Minimo will continue to live as a open source project under
+mozilla.org but I will have quite limited time to hack on
+it. If you are interested in stepping up, drop me mail.
+

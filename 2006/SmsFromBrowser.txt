@@ -1,0 +1,13 @@
+title: Sending SMS's from Minimo
+date: 2006-04-06
+
+
+I added the abilty to send SMS's in Minimo 014 for CE. We
+haven't really exposed this feature in any meaningful way
+yet, but the functionality exists. To get started, here is a
+snippet of code. Keep in mind that using this feature in web
+content requires UniversalXPConnect permissions (hence not
+ready in any way for prime time). The number has to be in
+international format.
+
+http://weblogs.mozillazine.org/dougt/archives/send_sms.html

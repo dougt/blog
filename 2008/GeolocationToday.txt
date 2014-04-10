@@ -1,0 +1,85 @@
+title: Geolocation today
+date: 2008-08-09
+
+At the Mozilla Summit, Brad Lassey and I presented on a
+session called Device APIs. My first demo was on something
+called Geolocation. The idea, which I have spoken about
+before, is that we should expose the user's physical
+location on earth to web sites via the DOM. This idea has
+become quite popular and now is being flushed out in the
+whatwg and w3c. Recently, I added support for an early draft
+of the spec to Mozilla and have a patch which updates it to
+the latest draft. This functionality provides the backend
+support to handle various geolocation providers (a
+geolocation provider is something that, um, provides
+geolocations such as a GPS device, a Wifi->location
+service, etc). Missing from this implementation is the user
+interface that enables you to allow geolocation requests
+from the web. This functionality will be provided via addons
+or via the application itself.
+
+For Firefox, I have created a Geolocation Addon that
+provides the user interface. This initial version allows you
+to statically set your location; it doesn't listen to any
+GPS, or use any other location device. You might think that
+this doesn't make sense, but for the people that have a
+desktop pc somewhere in their house, something like this
+will allow them to participate in geolocation. Of course, I
+see this extension expanding to support devices. In fact, I
+started on a NMEA geolocation provider for Mozilla. When I
+have time, I will merge this code into the Geolocation Addon
+unless you beat me to it!
+
+I also added a user interface in Fennec on the n810 devices
+to enable geolocation. If you have a n810, be sure sure to
+check out Fennec.
+
+The functionality is exposed off of the 'navigator' object
+in the DOM. So, the simplest example that is useful is
+probably a google maps demo:
+
+In your webpage's onload handler, do something like this:
+
+   navigator.geolocation.watchPosition(updateLocation);
+
+updateLocation is called whenever your position changes and
+is passed the new location as a parameter. You simple need
+to handle it:
+
+   function updateLocation(location) {
+            // do something with: location.latitude and location.longitude
+   }
+
+The live page is here. You can try it out if you install the
+geolocation addon I mentioned above, as well as applying the
+latest draft spec patch. The patch will land soon, and you
+will be able to grab a nightly to try it out.
+
+Of course, exposing such sensitive details such as your
+location does raise privacy concerns. Most of our Session at
+the Summit dealt with how device apis, and in particular
+geolocation, should handled. For geolocation, if the user
+does nothing, no geolocation information is exposed. In
+Fennec as well as in the Geolocation Addon, we use something
+called the info bar.
+
+The first is 'exact' which means that we will pass on the
+exact location the geolocation device gives us. For example,
+if your GPS gives back your position to the nearest foot,
+that is exactly what we will give to the web site.
+
+The second is 'neighborhood' which means that we are going
+to 'somehow' modify the location so that we drop
+precision/accuracy. The exact algorithm to do this has not
+been thought through and your suggestions are welcome. The
+idea behind this is that you might want a mapping
+application to know exactly where you are, but maybe you do
+not want the -- insert your favorite movie ticket purchasing
+site -- knowing exactly where you are.
+
+The last option is 'Nothing' which, of course, means to
+ignore the request.
+
+Get involved! You can provide feedback on draft spec, you
+can start filing bugs against our implementation, and you
+can start enabling your site for geoloccation!

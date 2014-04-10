@@ -1,0 +1,39 @@
+title: small devices and libxul without xul.
+date: 2006-01-13
+
+
+
+Benjamin has been doing some great work pushing the xul
+embedding story with xulrunner. There has been some
+confusion what this means for small devices, at least, i
+have gotten several mails and IM's regarding this.
+
+Here is the summary:
+
+1) people working on mozilla guts ([summarized][] by benjamin)
+are worried about the hundreds of options that configure.in
+gives you. There is a non-zero cost to having these sort of
+options, etc. Plus, some of these options give you the power
+to fragment what sort of web api support you get. This
+pisses off content developers because they can't figure out
+what a browser supports based on their UA string.
+
+2) After a "spirited" debate, the decision was made by
+Brendan Eich that we will not drop no-XUL support. This was
+a smart decision. :-)
+
+3) The gtk widget that wraps up gecko internals will use the
+libxul library. libxul is this new library that wraps up all
+of the gecko guts into an easy to use package.
+
+4) libxul will have an option to not include xul. It is a
+terrible name, that should get fixed with a Makefile change.
+
+5) 3 suppported tiers will be created, and we will encourage
+embedders to move to one of these options. Each of these 3
+options will be using the libxul library (with or without
+xul) If you want changes in these tiers, send mail / file
+bugs.
+
+[summarized] = http://benjamin.smedbergs.us/blog/2006-01-12/mozilla-embedding-small-devices-and-gtkmozembed
+

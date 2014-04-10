@@ -1,0 +1,176 @@
+title: Joey Project Update
+date: 2008-01-07
+
+Background
+
+Project Joey brings the Web content you need most to your
+mobile phone by allowing you to easily send it to your
+device. You can quickly mark content that is important to
+you and have that content always available while using your
+mobile phone.
+
+The premise is this: you can use Firefox to send text
+clippings, pictures, videos, RSS content, and Live Bookmarks
+to your phone through the Joey Server. The Joey Server
+transcodes and keeps all of the content up-to-date. You can
+then use your phone’s browser or the Joey application on
+your phone to view and manage what you have uploaded.
+
+The goal is to investigate the mobile space using a
+desktop-centric model. Like many other Mozilla projects,
+there are no plans to productize Joey. We will work with the
+community to build a compelling and usable tool that people
+will enjoy using.
+
+We been experimenting with two different ways to access data
+from a mobile device. The first approach used a J2ME Midlet,
+a small application that a user installs on the device;and
+the J2ME Polish, an application framework for J2ME, an
+approach which simply uses the browser that is on the
+phone. We deployed a xhtml-mp mobile site that allowed users
+to access Joey uploads directly from the site.
+
+What we learned:
+
+About the experiment
+
+Joey has been running for over one year. We incrementally
+added features. For a full listing of milestones met over
+the last year, please see the Joey Roadmap. There have been
+over 4400 users. The top 1% of users have an average of over
+45 uploads.
+
+About the content
+
+Joey uploads can be items such as text, videos, or images.
+
+We saw a similar number of each type of upload among Joey
+users — there wasn’t more text uploads over video
+uploads. Most of the text uploads were over 160 chars (thus
+sending by SMS required multiple messages).
+
+Videos and images were transcoded as required using the open
+source tools â€˜convertâ€™ and â€˜ffmpegâ€™. For every user,
+we know what sort of capabilities their device has,
+including screen size. Using this information, we optimized
+the content for their specific needs. For example, images
+were scaled to the devices screen size, and converted to PNG
+(a format that is recognized my most, if not all, phones).
+
+We also experimented with other types of Uploads. For
+example, we extended the notion of Microsummaries to the
+mobile device, allowing the “cloud” to process the
+microsummary and notify the device of any change. We did
+something similar with RSS feeds. Both were used much less,
+but this might be attributed to being a late feature
+addition. Both of these forms of Uploads were “rich” media
+and required a browser to render.
+
+Mobile Software
+
+On the mobile device, we provided both a Java J2ME client as
+well as a xhtml web site. There were tradeoffs in both
+approaches. This is not meant as a formal breakout of
+features, but rather my personal observations on the
+technologies.
+
+J2ME
+
+The J2ME application offered the users the ability to
+persist content on their device allowing the user to not
+have to access the network to retrieve any of the Joey
+uploads. This persistence may be critical in places that
+have no network connectivity.
+
+The J2ME application also offered an icon as a very easy way
+to get to their Joey Uploads. In the standard location of he
+application has its own icon in a standard location. Users
+didn’t have to type in a URL into their browser, instead
+they could just click on the Joey Icon and the J2ME client
+knew were to go.
+
+Of course there were drawbacks:
+
+First, Java J2ME is â€œWrite Once, Run Anywhereâ€. Even
+with the J2ME Polish framework, there were many devices
+which Joey ran on that simply did not work. A common
+complaint was that different key on various devices did not
+do what “they were suppose to”.
+
+Secondly, J2ME on most production phones has a very strict
+security model. On most phones the J2ME security model
+caused our unsigned application to complain about making a
+network connection each and every time we wanted to make
+update the content. This may have been fixed by signing the
+J2ME application.
+
+Lastly, you had to install the application. Unlike SMS
+messaging or the browser on the device, there isn’t a zero
+cost setup. You have to figure out which device you have,
+have a SMS sent to your phone with the right URL to the
+installer, download this installer, and finally install it.
+
+The Web
+
+Using the web offers similar tradeoffs most involving the
+immature featureless state of the browsers that ship with
+phones.
+
+For example, most mobile browsers don’t remember
+user/password. This requires you to re-login each and every
+time you go back to the site. Most browsers are dumb and
+require you to conform to the most basic markup — nothing
+very fancy. Lastly there is even less information about the
+browser that ships on a given phone, than there is about the
+J2ME VM that ships on a phone.
+
+On the plus side, there is zero-cost install, finding people
+that know how to do web dev is easier than J2ME, there are
+no silly warnings that you are about to download content,
+and the browser is allowed to launch helper applications
+(such as a video player) more easily than J2ME.
+
+What is next:
+
+Though our Joey usage data is inconclusive about whether
+“send to phone” is a must-have for people, it seems
+worthwhile and important to continue to explore the
+relationship between the desktop and mobile Web experiences.
+
+We are now stepping back and broadening our investigation
+beyond “send to phone”, and looking more broadly at the
+relationship between a person’s desktop-based Firefox and
+any mobile devices a person may have. We would like to work
+together with you to generate ideas around the this
+relationship and create new prototypes to explore these
+ideas.
+
+For example:
+
+1. Creating a new mental model and user interface for Joey,
+for example, avoiding the “upload” paradigm; for example, by
+providing a PC-based virtual representation of a user’s
+mobile phone as a Firefox Add-on (or independent Prism app)
+so that sending something to your phone is as easy as
+dragging and dropping it there. A potentially useful mobile
+browser home page could include those snippets that a user
+has dragged to the phone.
+
+2. Use cases that work just fine with SMS messaging; this
+has essentially universal reach and utility, and could
+generate interest in mobile browsers as those users move
+from SMS-only to mobile browsing.
+
+3. Explore new user interface approaches to Microsummaries.
+
+4. Streamline the sign up and usage by removing the need to
+registration where possible.
+
+In the meantime, I would like to invest as little as
+possible into ensuring that the existing Joey service works
+day-to-day. That means, when it breaks, it is going to stay
+broken. If you feel strongly about this, please do speak up.
+
+I have started a topic in the Mozilla Labs forum for your
+feedback and ideas. I hope that you will jump in to the
+conversation. 

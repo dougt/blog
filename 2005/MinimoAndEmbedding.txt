@@ -1,0 +1,37 @@
+title: Minimo and "Gecko" Embedding
+date: 2005-11-02
+
+The Red Herring is running an article about a recent success
+that Opera has had with Thales. Thales, as you might know is
+a huge aerospace electronics firm. Apparently Thales is
+going to use Opera in some of the in-flight entertainment
+systems.
+
+When I worked at AOL, we helped a team produce InstantAOL,
+or the so called Gateway device. Our piece was insuring that
+the browser worked correctly. We basically were just a
+browser engine that they could use to render content - this
+was effectively the birth of device embedding. We had no
+control over the UI, after all it was their project.
+
+Moving forward we did some Linux specific embedding work
+that targeted ARM based devices. Again, the UI was
+effectively just a test bed and someone else would decide on
+the UI and features. Again, and after all, it was their
+project.
+
+The author points out that this deal may be an indicator
+that the company is shifting its focus to markets where it
+has an advantage over rivals like Firefox and IE. The
+vertical market as well as the operator owned cell phone
+market is a very hard place. In many ways, you are doing
+professional services and developing a custom-ish solution
+for each particular device|market. To make matters works, it
+seams when you are doing this kind of one-off work, you are
+more worried about the bottom line, than you are about
+innovating new features.
+
+This is very different than how I see Minimo. Minimo is
+focused on creating a great browser for the users of cell
+phones and PDA's without external deadlines, requirements,
+or politics.

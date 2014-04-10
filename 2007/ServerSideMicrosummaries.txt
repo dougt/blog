@@ -1,0 +1,46 @@
+title: Server Side Microsummaries
+date: 2007-01-10
+
+
+
+Firefox 2 supports Microsummaries which provide a powerful
+way to get to the content that is most interesting on a
+page. The current feature of microsummaries in Firefox is
+called LiveTitles which basically allows you have the
+visible “name” of the bookmark be dynamic. There are a few
+examples here and here, and general microsummary information
+is here.
+
+I have been experimenting with Microsummaries. Basically
+what they do is transform one type of XML or html to
+another. So for a given page, we run a set of rules across
+it and produce a result. For example, the LiveTitle feature
+in Firefox grabs the pages content, applies an xslt
+transformation, and the result is used as the name of the
+bookmark. A while ago, I was asking Myk to give the
+developer some way to get notified when the result of a
+microsummary changes (Myk is working on the patch. need bug
+number.). However, it was quite obvious that I would want to
+know about microsummary result changes even when Firefox
+wasn’t running. For example, maybe you want to be SMS’ed or
+emailed when something changes.
+
+I was discussing this and Dietrich Ayala told me about a
+microsummary engine he wrote in PHP. With it you can do
+something like:
+
+
+    $ms = new microsummary();
+    $ms->load($file_path_to_ms_generator);
+    $ms->execute($url_to_apply_microsummary_generator_against);
+
+    echo “Microsummary Result\n” . $ms->result . “\n”;
+
+We can use it to test microsummary generators. If you
+building a custom “hand rolled” generator, you can use this
+to ensure that your generator is working without having to
+mess around with it in Firefox.
+
+Here is the code:
+
+http://svn.mozilla.org/labs/joey/trunk/servers/runner/microsummary.php

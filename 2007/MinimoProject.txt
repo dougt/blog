@@ -1,0 +1,37 @@
+title: Minimo and Mobile
+date: 2007-11-13
+
+
+Over the past few years the Minimo project has provided (1)
+a set of build and runtime options optimized for resource
+constrained devices, and (2) A XUL-based UI for prototyping
+and experimenting with new user interfaces for navigating
+and viewing web content and general browsing on mobile
+devices.
+
+Recently you have probably read that the Mozilla Corporation
+is building the embeddable version of Mozilla and a mobile
+Firefox. In the new and expanded mobile effort the project
+will create a standards-based open-source browser engine and
+full open source development stack based on Mozilla
+technology, optimized for mobile devices, and embeddable on
+a variety of device targets. This new work will replace the
+Minimo project.
+
+If you are a developer using Minimo as the basis for your
+embedding needs, this new effort will help you. This is
+picking up where Minimoâ€™s build configure left off, and
+further squeezing and optimizing Mozilla.
+
+Although we havenâ€™t committed to specific platforms, all
+of the effort that was focused on the Minimo front end will
+be refocused on this new project. This new browser product
+will take advantage of lessons learned in minimo UI
+prototyping and experimentation. It will also include
+support for XUL-based add-ons, and deliver on Firefox’s key
+principles of ease-of-use and accessibility.
+
+We hope you can join the conversation. Most of the
+developers and interested people hang out on irc.mozilla.org
+#mobile. If you have questions, or need clarification,
+please drop by.

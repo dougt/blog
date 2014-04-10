@@ -1,0 +1,22 @@
+title: The start of the geolocation web
+date: 2009-06-09
+files: 2009/GeolocationFlickr.jpg 2009/GeolocationGoogleMaps.jpg
+
+Today, when you go to maps.google.com, you will notice
+something new:
+
+![Image of a Google Maps showing a geolocation icon](2009/GeolocationGoogleMaps.jpg)
+
+
+That little button between the map control and the
+street view man, when pressed, will enable geolocation for
+maps.
+
+Other sites also have started adopting geolocation. Flickr
+has created a maps page that has a Find my location button
+that uses geolocation to position you and then show you
+pictures from your area:
+
+![Image of a Flikr Maps showing a geolocation icon](2009/GeolocationFlickr.jpg)
+
+What other cool sites have you seen?

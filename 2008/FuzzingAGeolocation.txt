@@ -1,0 +1,56 @@
+title: Fuzzing a geolocation
+date: 2008-10-14
+files: 2008/FuzzingAGeolocation.jpg
+
+![Image of a map with a few locations fuzzed](2008/FuzzingAGeolocation.jpg)
+
+One of the features that we would like to support in
+Firefox, is the ability to “fuzz” your geolocation. The use
+case is pretty clear — you want to be able to share your
+exact location with a mapping application for turn by turn
+directions, but rather not expose that much information when
+you simply want to find out what movies are playing in your
+area.
+
+In the above picture, the red arrow on Embarcadero Road and
+Middlefield Road is my precise location (around 37.4419,
+-122.1419). I explicitly plotted that location by hand (it
+wasn’t reported to the google maps api via geolocation). The
+bunch of blue markers in the upper left is what my ‘fuzzed’
+location was reported as. There are a bunch the blue icons
+because I let this little webapp run for a bit. Now, this
+demo will not work in yet. I haven’t finished the fuzzing
+implementation in Firefox. However, here is what we are
+planning to do and I request that you comment here or in the
+bug 454488.
+
+The basic threat is that the web application you are going
+to can figure out your precise location even when you have
+“fuzzed” your location.
+
+The first thing we will do when starting up for the first
+time is to generate two random numbers. One will be a
+distance from your actual position, and the other number
+will be a direction. So, for me, in the above example, the
+displacement magnitude was 1503, and the direction was 139
+(in degrees).
+
+Now, these two numbers will never change, and the reason is
+that a website, if it sees enough of these displacement
+vectors, they can average them out and discover your real
+location. Not so good for “fuzzing”.
+
+The second thing we do is that each and every time a
+location is passed to the web application, we add a bit of
+randomness to the displaced location. This results in the
+small cloud of blue dots you see above. What you can’t
+really see by this map is that the error field of the
+geolocation is pretty large. So, even though it is a pretty
+tight cluster, the webapp will see an error greater than the
+distance between the reported position and the actual
+position.
+
+Other properties of the location such as altitude, speed,
+ect. will be zeroed out.
+
+I hope that this helps a bit. Let me know what you think.

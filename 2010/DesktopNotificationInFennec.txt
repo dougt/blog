@@ -1,0 +1,34 @@
+title: Desktop Notifications in Fennec
+date: 2010-10-14
+files: 2010/fennec-web-notifications.png 2010/DesktopNotificationsAndroid.png
+
+
+Just a quick update. I implemented Desktop Notifications in
+Mozilla. The first product that will use this will be
+Fennec, or Firefox for mobile. The work is based on and is a
+subset of the w3c draft specification. For now, the API is
+Mozilla specific and is accessible via
+navigator.mozNotification.
+
+When building this API, I was very minimal and only wanted
+attributes that would be used by everyone. You can find some
+simple examples here.
+
+Please give it a try, and let me know what you think. You
+can this it out in any of the latest nightly builds of
+Fennec.
+
+On OSs that do not have a native notification system, you
+will see something like:
+
+![Xul style desktop notification](2010/fennec-web-notifications.png)
+
+
+On Android, you will see something like:
+
+![Android style desktop notification](2010/DesktopNotificationsAndroid.png)
+
+Fair to note here, that because android doesn’t have a way
+to change the graphic in the notification area, you’ll
+always get the Fennec/Firefox icon. If you know a
+workaround, do tell!

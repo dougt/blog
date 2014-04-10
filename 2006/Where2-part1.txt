@@ -1,0 +1,58 @@
+title: Where 2.0, part 1
+date: 2006-06-13
+
+I am at Where 2.0. So far have seen alot of cool demo's. Most have
+looked very pretty on > 800x600 displays.
+
+Microsoft Earth looks very cool. Sounds very easy to create
+mash ups or in Microsoft speak “Mix-ins”. Through their
+Community’s feature, people can add in their own content.
+This is so much easier for end-users as they do not have to
+know much about javascript, html, etc. Apparently you can
+define a few lines (may even through a wizard) of RSS and
+you get a mix up. Hmm. Not sure that this will work for
+all case — like how do you deal with different different
+formats of the mash-up data.
+
+The GeoRSS talk was interesting. it seams to be the defacto
+standard (except with Google). I wonder if there is a way
+to specific a point then a range around the point (for
+accuracy).
+
+Things to look at when I have more time:
+
+* Mapstration
+* mapufacture
+* http://www.mylocalguru.com/
+* http://www.brainoff.com/weblog
+* http://www.platial.com/splash
+
+There are a bunch of companies that are allowing people add
+their content (directions, stories, pictures) to google
+maps. I think all are free to use. Not sure how these
+places sustain revenue. Maybe it is custom services that
+they offer.
+
+I haven’t seen anyone twist this a bit with a social network
+yet… I think that these user added locations we mean alot
+more to me if they were from someone I knew or a FoF. Where
+is the geo-location version of my-space/linked-in?
+
+Google Earth is a required application for everyone. It is
+simply beautiful. 20% of the earth is highres coverage and
+about 1/3 of the people in the world. The caching is so
+much better then what I used with Keyhole. The network here
+at the event is terrible (due to so many people trying to
+use it). This does not effect the demos.
+
+Google is release or updating something called SketchUp. It
+allows you to create content for the google maps. It will
+allow users to create 3d Models. It is sorta like the
+SecondLife editor but for the real world. The idea is that
+people will create models for interesting buildings and
+objects. I think I would rather see aerial images or
+footage. Maybe this is for modeling the interior of
+buildings? I do not get it.
+
+Just finished lunch and now I am waiting for the next
+presentations…. more to come.

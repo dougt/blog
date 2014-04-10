@@ -1,0 +1,24 @@
+title: Skyhook Wireless Cagematch!
+date: 2006-09-12
+
+I wrote an extension against the Skyhook Wireless API. It
+was selected as one of the finalists of their "Wi-Fi Cage
+Match" contests. Cool!
+
+The summary is:
+
+The location-awareness Firefox / Minimo extension, developed
+by a third party developer, integrates auto-location
+determination into the Firefox/Minimo browser turning it
+into a platform for various location-based services. As a
+result, content accessed or viewed within the browser is
+specifically and dynamically changed based on the user's
+location. For example, a movie directory site viewed in the
+Firefox/Minimo browser will immediately show only local
+movies without having you enter a zip code, or an airline's
+webpage might notice that you are in a terminal and return
+to you the arrival/departure data without you having to tap
+your way through nested links.
+
+The specific demo I included was a Google Maps mashup which
+I mentioned here before.

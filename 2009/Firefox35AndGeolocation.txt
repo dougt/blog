@@ -1,0 +1,217 @@
+title: Geolocation in Firefox 3.5 and Fennec
+date: 2009-04-30
+files: 2009/GeolocationDoorHanger.jpg
+
+I’m excited to introduce a new feature in Firefox 3.5 Beta 4
+that I’ve been working on called geolocation. Geolocation is
+an opt-in tool that lets users share their location
+information with web sites through Firefox and will enable a
+new range of services on the web. Geolocation can make web
+sites smarter and you more productive. Websites that use
+geolocation will ask where you are in order to bring you
+more relevant information, or to save you time while
+searching. Letâ€™s say youâ€™re looking for a pizza
+restaurant in your area. A website will be able to ask you
+to share your location so that simply searching for
+â€œpizzaâ€ will bring you the answers you needâ€¦no
+further information or extra typing required.
+
+This idea isnâ€™t new. We have been researching meshing
+geolocation data and the web for a few years. Last year,
+Mozilla Labs released an experimental addon, Geode, which
+implemented the draft W3C Geolocation Specification. We
+added support for the spec to Firefox 3.5 and “Fennec” (our
+mobile browser which is in development) as well as a user
+interface that put the user in control of which websites
+could use location. However, we left it to add-ons to
+implement the code that would actually figure out your
+location, using any technique (GPS, WiFi or cell tower
+triangulation, manual address entry) of their choosing. So,
+with Firefox 3.1, 3.5 or Fennec, plus a third-party add-on,
+users would be able to use location-enabled websites.
+
+However, we were still left with a chicken-or-egg problem:
+unless lots and lots of users installed an add-on, websites
+wouldn’t have a significant audience for which to develop
+location-enabled services; and without lots of useful web
+content using the feature, users had no reason to install an
+add-on.
+
+We decided to investigate bundling a technology that would
+provide an end-to-end solution, so that the feature would
+work out of the box for users, and would give websites a
+large enough potential user base to kick start the
+development of innovative apps and services. We had learned
+a lot from the discussions about the various add-ons that
+had been built, and in other forums over the last few
+years. Earlier this year, I hosted a talk on [Location in
+Mozilla][] during which we reviewed many of the critical
+privacy issues. We boiled these down to some key principles:
+* protecting user privacy.
+
+User privacy is super important to us and we believe that we
+have the best privacy policies regarding your data. The use
+of the WiFi data, IP addresses, associated protocol bits,
+should never be used to spy on users, track individuals, or
+shared without your permission.
+
+* enabling web developers to use the API in an unencumbered
+  way that would work in all browsers that implement the
+  spec
+
+Web developers can use a standard way of accessing
+geolocation data and not have to worry about the underlying
+geolocation provider. We don’t share with third-party
+location provider(s) any information about websites the
+user’s visiting; this protects both the user’s privacy, and
+the website’s right to write to a web standard without fear
+of any third party gaining insight into how the site is
+being used.
+
+* preserving user choice
+
+This feature is completely opt-in! If you don’t do anything,
+geolocation is never used. When a web page wants ask you for
+your location, you get an dialog similar to the one
+below. If you do nothing, the feature stays off by
+default. Only if you press “Tell them”, will you send out
+your location information. Furthermore, users are free to
+use a different geolocation provider by installing addons.
+
+![Image of the Firefox Doorhanger UI](2009/GeolocationDoorHanger.jpg)
+
+I’m excited to introduce a new feature in Firefox 3.5 Beta 4
+that I’ve been working on called geolocation. Geolocation is
+an opt-in tool that lets users share their location
+information with web sites through Firefox and will enable a
+new range of services on the web. Geolocation can make web
+sites smarter and you more productive. Websites that use
+geolocation will ask where you are in order to bring you
+more relevant information, or to save you time while
+searching. Letâ€™s say youâ€™re looking for a pizza
+restaurant in your area. A website will be able to ask you
+to share your location so that simply searching for
+â€œpizzaâ€ will bring you the answers you needâ€¦no
+further information or extra typing required.
+
+This idea isnâ€™t new. We have been researching meshing
+geolocation data and the web for a few years. Last year,
+Mozilla Labs released an experimental addon, Geode, which
+implemented the draft W3C Geolocation Specification. We
+added support for the spec to Firefox 3.5 and “Fennec” (our
+mobile browser which is in development) as well as a user
+interface that put the user in control of which websites
+could use location. However, we left it to add-ons to
+implement the code that would actually figure out your
+location, using any technique (GPS, WiFi or cell tower
+triangulation, manual address entry) of their choosing. So,
+with Firefox 3.1, 3.5 or Fennec, plus a third-party add-on,
+users would be able to use location-enabled websites.
+
+However, we were still left with a chicken-or-egg problem:
+unless lots and lots of users installed an add-on, websites
+wouldn’t have a significant audience for which to develop
+location-enabled services; and without lots of useful web
+content using the feature, users had no reason to install an
+add-on.
+
+We decided to investigate bundling a technology that would
+provide an end-to-end solution, so that the feature would
+work out of the box for users, and would give websites a
+large enough potential user base to kick start the
+development of innovative apps and services. We had learned
+a lot from the discussions about the various add-ons that
+had been built, and in other forums over the last few
+years. Earlier this year, I hosted a talk on Location in
+Mozilla during which we reviewed many of the critical
+privacy issues. We boiled these down to some key principles:
+* protecting user privacy.
+
+User privacy is super important to us and we believe that we
+have the best privacy policies regarding your data. The use
+of the WiFi data, IP addresses, associated protocol bits,
+should never be used to spy on users, track individuals, or
+shared without your permission.
+
+* enabling web developers to use the API in an unencumbered
+  way that would work in all browsers that implement the
+  spec
+
+Web developers can use a standard way of accessing
+geolocation data and not have to worry about the underlying
+geolocation provider. We don’t share with third-party
+location provider(s) any information about websites the
+user’s visiting; this protects both the user’s privacy, and
+the website’s right to write to a web standard without fear
+of any third party gaining insight into how the site is
+being used.
+
+* preserving user choice
+
+This feature is completely opt-in! If you don’t do anything,
+geolocation is never used. When a web page wants ask you for
+your location, you get an dialog similar to the one
+below. If you do nothing, the feature stays off by
+default. Only if you press “Tell them”, will you send out
+your location information. Furthermore, users are free to
+use a different geolocation provider by installing addons.
+
+* applicability to both Firefox and Fennec
+
+To avoid fragmentation on the web, the geolocation feature
+should be consistent between the desktop and mobile. The
+truth really is that the line is getting blurred between
+mobile and desktop. Calling the geolocation feature “mobile
+only” discounts many use cases that are pretty important.
+
+Given these principles and a strong desire to create an “out
+of the box” experience in Firefox and Fennec, and to kick
+start the location aware web, we are happy to announce that
+Firefox 3.5 and Fennec will be using Google Location
+Service. We found that we agreed on the many privacy
+concerns around location. Do check out [Mozilla’s privacy
+policy][] and [Google’s privacy policy][]. I am pretty excited
+about these policies I think they are going to be the
+industry standard when it comes to network based geolocation
+providers.
+
+Just to provide a bit of technical detail on what exactly is
+going on, below I will walk through a simple geolocation
+request.
+
+1) A user goes to a page that has some Javascript that asks
+for a Geolocation.
+
+2) When the user loads that page, we put up a dialog.
+
+3) If they don’t click anything, or click no, we do not do
+any geolocation stuff and simply return an error to the
+requestor.
+
+4) If they click yes, we drop into this [bit of code][] which
+packages up the WiFi Access Point data into JSON and sends
+it to Google Location Services over HTTPS. The URL is
+configurable by preferences (“geo.wifi.uri”). The data sent
+includes a version number, access token, and an array of
+public WiFi access points data. The access token basically
+acts like a two week cookie, and if you clear cookies in the
+browser, this value is deleted and a new one is used.
+
+6) Lastly, the Google Location service returns a
+location. It’s another json object that is an actual
+location.
+
+That’s it. For more information, check out the [Frequently
+Asked Questions][]. Get ready for Firefox 3.5 and start
+thinking about how you can location aware your web apps!
+Here is the [spec][].
+
+Got questions, feel free to ask. I am looking for
+feedback. Comments welcome.
+
+[Location in Mozilla]: http://air.mozilla.com/wp-content/uploads/2009/03/location-2009-03-04.ogg
+[Mozilla's privacy policy]: http://en-us.www.mozilla.com/en-US/legal/privacy/firefox-en.html
+[Google's privacy policy]: http://www.google.com/privacy-lsf.html
+[bit of code]: http://mxr.mozilla.org/mozilla-central/source/dom/src/geolocation/NetworkGeolocationProvider.js#162
+[Frequently Asked Questions]: http://en-us.www.mozilla.com/en-US/firefox/geolocation
+[spec]: http://www.w3.org/TR/geolocation-API/

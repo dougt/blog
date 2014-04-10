@@ -1,0 +1,51 @@
+title: Update on WinCE and Function Pointer Addresses
+date: 2005-08-31
+
+According to Cryil, writing code like this:
+
+          WNDPROC currentWndProc = (WNDPROC)::GetWindowLong(hWnd, GWL_WNDPROC);
+          if (PluginWndProc == currentWndProc) {}
+
+Will never work on ARM as PluginWndProc is not
+translated. This seams broken, but it is exactly what I am
+finding out.
+
+The workarounds he suggested are:
+
+1) You can try to read the function import table, and get
+the WinProc from it. Ick.
+
+2) You have to get the real address the process has been
+mapped to and perform some easy RVA calculations (HMODULE -
+RVA - 0x40000000 (supposed load address) + WndProc ==
+PluginWndProc). RVA is usually 0x1000. You'll get it by in
+the map file (Enable 'generate map file' in your project).
+
+3) If there is only one thread, do this (to let Windows make
+the computation):
+
+     WNDPROC currentWndProc = (WNDPROC)::GetWindowLong(hWnd, GWL_WNDPROC);
+     SetWindowLong(hWnd, GWL_WNDPROC, PluginWndProc);
+     WNDPROC hProc = (WNDPROC)::GetWindowLong(hWnd, GWL_WNDPROC);
+     SetWindowLong(hWnd, GWL_WNDPROC, currentWndProc);
+
+     if (hProc == currentWndProc)
+
+The problem with this solution is that it requires changing
+the WNDPROC, so your might be missing some windows message
+while doing this. If you have only one thread, it is not
+very dangerous. If you have multiple thread, you'll have to
+suspend them first, and then, resume then.
+
+This approach I tried and it didn't seam to work for me.
+
+4) Create a specific window message in all plugins that,
+when received, return 0x45454545 (for example). Then make
+your test be "if (SendMessage(hWnd, WM_PLUGIN_MAGICMSG, 0,
+0) == 0x45454545)" as the default wndProc will return 0 and
+not 0x45454545.
+
+As it turns out, this code in Mozilla was only used in
+support of our NSAPI implementation. We special cased our
+code for the behavior of several specific plugin. I disabled
+these hacks for WinCE bypassing this problem all together.

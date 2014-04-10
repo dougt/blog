@@ -1,0 +1,95 @@
+title: NPAPI on Android
+date: 2011-05-25
+
+Before I start:  I am going to say “Flash” in this blog post
+a few time.  I am also going to say “Fennec”.  I am not
+going to say “I like Flash” or “I do not like Flash”.  I am
+also not going to say “We are shipping Flash support”.  This
+blog post is about the progress we have been making on
+getting NPAPI and Flash working in Fennec.  Decisions to
+ship such support is another topic.  Please think of this as
+a feasibility study… an informal one.
+
+I went for a short vacation and recently picked up the
+Android NPAPI implementation for Fennec.  When I left, we
+had some basic bitmap drawing going.  As you may recall, the
+Webkit Android NPAPI has a few different drawing models.
+The first one (and easiest to understand and get
+bootstrapped) is called Bitmap Model.  It basically is a
+piece of memory that you can hand to the plugin and the
+plugin will call back on a set of functions that you have
+registered with it.  These sets of functions (interfaces)
+are a simple wrapper around Skia.  So, we got the sample
+plugin loaded and saw a blue ball bouncing around.  Yay.
+
+Next step was to get the next drawing model working.  This
+one is called the Java Surface Model.  Two things about this
+drawing model.  First, it is super important as it is the
+model that we believe that Adobe Flash uses exclusively.  If
+we get this model right, the other’s are far less
+important.  The other thing is that this model is very scary
+as it uses Java.  Recall that Fennec doesn’t have access to
+the Java runtime in the child process.  (because for
+responsiveness Fennec uses multiple processes — one for the
+UI, one for the web content.  The web content process
+doesn’t have access to Java).  So, while I was on the beach
+and making tough decisions like which beach to go to
+tomorrow, Brad Lassey started reflecting the JNI interface
+over our IPC layer.  Yes, he is fearless.  His work allows
+you to make JNI calls from the child.  So, if you want to
+create a new Java string, you can use his interface from the
+child process and it will return an opaque pointer to a new
+Java string that was created in the parent.  This is not
+meant to be a general JNI remoting service (but could
+develop into one).  The intent is to only get as much JNI
+remoting needed in order to load Flash.
+
+So, that brings us to my last hack session. The way this
+drawing model works is that the plugin asks you what you
+support.  We say, we support these drawing models, Bitmap
+and Java Surface.  The plugin we are targeting rather do
+things with a Java Surface, so it asks that we use that
+drawing model.  After the plugin finishes draw model
+negotiation and initialization, it is ready to go.  We just
+have to get its “surface” and render it to the screen.  To
+do this, we make a standard NPAPI GetValue call to the
+plugin and use the define kJavaSurface_ANPGetValue.  Here is
+the comment that is in the android_npapi.h header file:
+
+    /** Requests that the plugin return a java surface to be displayed. This will
+        only be used if the plugin has choosen the kSurface_ANPDrawingModel.
+
+        NPP_GetValue(inst, kJavaSurface_ANPGetValue, jobject surface)
+    */
+    #define kJavaSurface_ANPGetValue ((NPPVariable)2000)
+
+A couple of sad points:
+
+    This interface was never standardized and this GetValue
+    may eventually collide with some another GetValue key.
+    Not really sure what should be done here other than
+    document it.
+
+    The “surface” return isn’t a Surface at all.  Instead,
+    it is a View.  The comment and the #define name are
+    completely bogus.  Looking at the sample plugin, it is
+    clear the result of the GetValue call is a subclass of
+    View, not of Surface.
+
+Ignoring that, if the call is successful, the plugin should
+have created a View and will draw into it as soon as that
+View is attach to some View Manager.  (Note:  you can’t
+access the raw bitmap from this drawing model.  If you
+could, it would integrate much nicer into Fennec.).  To get
+this View into our ViewManager, we have to tell the parent
+process about it.  This is basically where I ended last
+night.  For a simple check point, I forwarded the View
+pointer to the parent, and absolutely placed it in our
+ViewManager. Guess what, it worked.  We could see a little
+3D object spinning around in the browser.  Well, above the
+browser.  Partial Yay.
+
+Next steps are to clean the code up a bit, have the plugin
+object be position and scaled appropriately, and fix more
+bugs along the way.
+

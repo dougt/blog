@@ -1,0 +1,54 @@
+title: Policies attached to data
+date: 2010-03-23
+
+
+
+Everyday millions of people upload pictures, update their
+status message, and shop online.Â  In each of these actions,
+users have expressed consent and the browser is the
+instrument that enables the user to perform these various
+tasks.Â  When I upload a picture to a site, it is arguably
+governed by the terms and conditions of that site and local
+laws.
+
+There have been some requests to require all web browsers to
+transmit rules that instruct web pages on how long they can
+hold onto data.Â  Passing rules along with data is a bad
+idea because it may be ignored due to existing rules and
+simply because it is unenforceable.
+
+Suppose that a default rule that a web browser would send is
+â€œonly keep this data for 2 weeksâ€.Â  When a user goes
+to upload and share a picture with their friends, there are
+existing terms and conditions in place merely by using the
+web site which may override this 2 week retention rule.Â
+The website might say plainly that uploaded pictures will be
+archived forever which is in conflict with the rules that
+are associated with the picture.Â  This leads to user
+confusion as the expectations may differ.
+
+Using the same example as above, there is no way for the
+browser to verify that the website does honor this retention
+rule.Â  After all, what a recipient does with a piece of
+data is outside the scope of what a browser sees.Â  Any
+browser user-interface would not be able to assert any fact
+regarding these rules.Â Â  Thus, the default rules would
+never be able to be changed by the user.Â  And because these
+defaults would never be seen by the user or changed in any
+way, all will most likely ignore them.
+
+Currently, one of the most sensitive data that people share
+with a website is their credit card number.Â  Browsers have
+never passed rules to a website when an e-commerce
+transaction occurs.Â  Yet, sites do not retain credit card
+numbers without permission.Â  In this case, there are
+regional laws governing the usage of credit card numbers.
+
+This approach of putting legal protection around data is
+best.Â  If a certain type of data is deemed more sensitive,
+it should be treated that way legally and outside of the way
+it is transfer. Credit card numbers can be transferred in
+any manner â€“ from the browser to a website, or from a
+postcard to a brick and mortar â€“ both methods are
+protected.
+

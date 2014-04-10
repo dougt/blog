@@ -1,0 +1,42 @@
+title: Geolocation Address
+date: 2009-07-20
+
+Last week, I pushed a change that will enable tomorrow’s
+trunk Firefox builds (Minefield) to access user-readable
+position information.
+
+For example, instead only being able to work with:
+
+    37.3882005, -122.0834553
+
+You can see the physical address as:
+
+    650 Castro St, Mountain View, California, 94041, US
+
+This should help aide the many people that already know
+their physical address in familiar terms.
+
+To access address elements, you simply do what you have been
+doing.Â  The only modification is to test to see if there is
+an address associated with the position, and if so, access
+it:
+
+        navigator.geolocation.watchPosition(successCallback)
+        function successCallback(position)
+        {
+            if (position.address)
+                    alert(position.address.postalCode);
+                    }
+
+Other fields on the address object are:
+
+      address.streetNumber
+      address.street
+      address.premises
+      address.city
+      address.region
+      address.county
+      address.countryCode
+      address.postalCode
+
+Please let me know what you think.

@@ -1,0 +1,83 @@
+title: J2ME Playground
+date: 2007-01-03
+
+
+
+I have been spending some time prototyping a mobile
+application in J2ME.
+
+Diversity!
+
+
+
+I have been spending some time prototyping a mobile
+application in J2ME.
+
+Diversity!
+
+200701031242200701031242-1200701031242-2200701031243200701031243-1
+
+
+Oh my god, how many different phones are there and why do
+they all so damn different?! It seams that all the carriers
+want some distinct advantage over each other which leads to
+a terribly fragmented landscape which alienates software
+developers (what should I target), and confuses consumers
+(what is the difference between these 5 Motorola razor
+phones besides the color).
+
+Writing software for each phone is going to be alot of grunt
+work. Maybe something like J2ME Polish will help. I have
+played a bit with it, and actually love the idea. Basically,
+what it does is allows you to define your look-and-feel in
+CSS. Then at build time, it writes the code required for the
+java Forms. It also can do some dynamic css manipulations.
+
+Deployment
+
+Leaving deployment of j2me midlets up to the enduser, even
+if they are very smart, is not an option. It is just too
+hard to use the phone to download a .jad/.jar file. Maybe
+SMS installation is the way to go, but that doesn’t work
+everywhere (or i couldn’t get it to work on the phones that
+I have). If you look at Windows Mobile and Windows Desktop
+integration, they have a solid installation process (but it
+isn’t cross platform which is a failure in itself). Also,
+ITunes and their game installation is seamless (yet you
+still have to deal with Apple to host a game in ITunes —
+even if your software is free). For development, I have
+found it very nice that I can bluetooth my .jar file to the
+phone. However, that doesn’t seam to work on all phones
+(specifically, it doesn’t work on any windows mobile phones
+I have tried).
+
+Lockup
+
+Pushing content from a j2me midlet to system servers like
+the phoneÃ¢Â€Â™s address book, calendar, and/or the web
+browser seams to be tightly locked down. Why? Oh, why must
+you carriers be so despotic when it comes to accessing
+standard services on the device! For example, I want to
+write a j2me application that takes a picture using the
+camera. Guess what; it fails to work. Why? Because it
+appears that you must be a privileged application to access
+the Camera. Sounds like a good idea, until you realize that
+it is the cellular operator — not the user of the phone —
+that grants these permissions. Imagine if you bought a new
+car and the only kind of after-market product you could use
+must be certified by the car manufacturer. This sounds
+insane doesn’t it? :-) If anyone knows much about this area
+of J2me security and has successfully gone through some
+signing process with a carrier, please let me know… i have a
+few questions for you.
+
+Happy Thoughts
+
+I am very encouraged about the progress that J2ME and its
+community has made. It is a good subset of the functionality
+you need on a phone. The tools including ant, j2me polish,
+are easy to use and the ability to get a question answered
+is high. I am a “command line” guy and don’t play in the IDE
+much, but the j2me SDK comes with some sort of IDE for those
+so inclined. The online documentation is a bit sparse, so i
+recommend getting a book on j2me.

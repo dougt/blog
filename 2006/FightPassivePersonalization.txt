@@ -1,0 +1,60 @@
+title: Protecting against passive personalization
+date: 2006-08-25
+
+Have you see this:
+
+http://www.aolstalker.com/
+
+This site lets you rate users by how interesting their
+queries were. I would stay away from any that are marked,
+'Masterpiece'. People who's id's are marked in such a way
+probably need professional help. seriously. Just to give you
+a taste: User [2281868][] is a person who believes that demons
+live in the apartment above him. His actually search query
+was how destroy [demons][] that live in apt above.
+
+Just troll around a bit. it is somewhat like a mystery you
+need to piece together. For example, user [789586][] plays world
+of warcraft, lives in Halifax, and is going to visit New
+York with is new verizon phone. Am I sure about this? i do
+not know, but I would bet I am pretty close.
+
+When I was at AOL/Netscape, there was a really smart guy
+talking about this concept of passive personalization (bonus
+points if you know who I am talking about). The idea is that
+over time you find out ALOT about what a person likes and
+doesn't like by closely watching what they do in a
+system. Advertisers love this as they can target an ad
+directly to the demographic they are interested in. For
+example, User [2281868][] would see ads depression medication,
+and user user [789586][] might get ads on gold farming. This
+seams nice as you are not going to ads that are completely
+out of your demographic. However, it is terrible that you
+have no control over this - there is no user control to
+reset this data or erase it.
+
+What do we, the average person, do about it? Here are a
+few tips.
+
+1) Clear your cookies. At shutdown have Firefox purge all of
+your cookies. If you do not know how to do this, ask
+someone.
+
+2) Use a dynamic ip. some ISPs have long leases. make sure
+that renew your IP as often as you can.
+
+3) Use anonymizer or some other tunneling software that
+masks who you are.
+
+4) Someone should write a Firefox extension to send dummy
+queries to your default search engine to mix things
+up. Adding noise is a good thing. Maybe there already is
+one, if not put one up and I will buy you lunch even if I
+have to mail it to you. :-)
+
+If you have more, please share.
+
+
+[demons]: http://www.aolstalker.com/search.php?q=how+destroy+demons+that+live+in+apt+above
+[2281868]: http://www.aolstalker.com/user.php?uid=2281868
+[789586]: http://www.aolstalker.com/user.php?uid=789586

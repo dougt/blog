@@ -1,0 +1,59 @@
+title: Mozilla Fennec Future – A post from the past
+date: 2012-01-25
+
+I wrote this back in October.  Never posted it.  Here it is
+for posterity and maybe some quick reflections.
+
+Start-up performance and memory usage have been the two of
+the biggest concerns our users have had with Firefox for
+Android.  On the fastest Android devices, the browser starts
+up in about 2 seconds.  We, and our users, believe that this
+is completely unacceptable.  We have been exploring ways to
+improve both startup speed and memory usage.  One of the
+outcomes has been to build a prototype that uses Android’s
+native UI instead of XUL.  Although not a silver bullet,
+this prototype shows big wins in both areas.
+
+Historically we’ve built our Android user interface with
+XUL.  XUL is a very flexible UI toolkit.  This flexibility
+comes at a cost. It requires that we have to load all of
+Gecko, our rendering engine, before being able to start
+using XUL.  So, before we can show any browser UI, we have
+to load all of Gecko.  A lot of progress has been made to
+improve Gecko startup, but we aren’t able to provide the
+same startup experience that native Java widgets can
+provide.  Just to be clear, this isn’t actually because XUL
+is slow, it is just that, on Android, bring up native
+widgets is very fast and loading libraries is very slow.
+
+Our prototype shows that we have a 6MB RSS memory win when
+comparing our current build to a Fennec nightly build.  This
+doesn’t include the RSS usage caused by a second ‘child’
+gecko process.  We can have a fully functional Awesome Bar
+up and ready for you in under 300ms.  Keep in mind that this
+is a prototype and the actual numbers of a more full
+featured browser will vary.
+
+A native UI will have some challenges of its own to
+overcome. We’re coordinating with the Jetpack project to
+build strong support for extensions. We’re talking with our
+localization teams about how to ensure we support users
+around the world.
+
+Our hope is to build future versions of the Firefox for
+Android user interface using native Java.  Our engineering
+teams are already taking this project on with the aim of
+building this technology into the Firefox for Android
+experience. It’s too early to estimate when we’ll be ready
+to replace the XUL UI, but the team is working quickly and
+with focus.
+
+We have a lot of work to do, and you can help.  If you would
+like to get involved, especially if you have experience
+building native Android applications, now is the time. Take
+a look at our [wiki][] for more information, or grab the source
+from [birch][].  Also see the
+mozilla dev-planning mailing list for a discussion.
+
+[wiki]: https://wiki.mozilla.org/Fennec/NativeUI
+[birch]: http://hg.mozilla.org/projects/birch/

@@ -1,0 +1,71 @@
+title: IE7 low rights notes
+date: 2006-10-05
+
+
+
+IE7 on vista runs in a protected mode. All request of the
+operating system, such as 'open a file' are tightly
+control. In fact, the windows registry and file system are
+segmented in such a way that allows this protected mode to
+write volital changes without effecting the rest of the
+machine.
+
+This significantly reduces the vulnerability surface area of
+IE - Even if you could get an evil activeX control install
+temporarily, it would be running with low permissions
+therefore you wouldn't be able to comprise the rest of the
+system easily. You would still be able to steal passwords,
+etc. But It would be very hard to write files to the hard
+disk, read from the My Documents folder, etc. Although if an
+exploit exists, you probably could write keyboard sniffer in
+the browser for the given session.
+
+Firefox (and just about every other piece of software
+currently available), currently, runs as a normal
+application on Vista. Firefox is prevented from writing to
+Program Files, and other global places. But we can certainly
+write to the Documents and Settings, etc. So, an exploit
+could mean the user can be effected, but the system itself
+(including other users) will not be effected.
+
+So, the difference between a low process and a normal
+process, in terms of browser security, is that a low process
+means that an exploit will not render the given user or
+system completely owned by the attacker. A normal process
+being exploited will have all of the permissions that a
+normal users has on the machine.
+
+Now, I am sure your asking, "well, how does ie7 open local
+content, or save a preference?" Well, opening a file: url
+will result in a IE window that is in normal mode. Only
+local code can be loaded in such a instance of IE (browsing
+to http://www.mozilla.org from file://foopy results in a new
+instance of IE which loads the website). For persistent
+storage like a preference, IE7 uses COM to send a message to
+a broker which is running with normal permissions.
+
+So, an interesting attack vector would be trying to see if
+this IPC was indeed secure from content. IE7's security
+depends on this.
+
+Should Firefox use Low Mode?
+
+This is a good question. If we followed IE7 and had a broker
+which ran at normal permission mode, we would have to funnel
+all reads, writes, preference access, sqlite calls, through
+it. We would have to move cache out into a low specific
+directory and figure out how best to make some thing stick
+between sessions, etc. Then the key is to harden this broker
+so that we somehow new that the call was legit. We then
+would have to ensure that the performance of all of this
+proxying was acceptable.
+
+Would this by us some piece of mind. Probably not. We will
+have to continue to be on our toe about security
+vunerablities releasing fixes as fast as possible, continue
+to do security audits, etc. Moving to Low Rights is not a
+silver bullet but it is something we should consider as
+defense in depth.
+
+
+
